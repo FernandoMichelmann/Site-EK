@@ -1,4 +1,4 @@
-/*RESET*/
+/* RESET */
 
 * {
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 
-/*FONTES*/
+/* FONTES */
 
 @font-face {
     font-family: "fashion";
@@ -20,200 +20,153 @@
 }
 
 
-/*CONFIGURAÇÕES GERAIS*/
+/* CONFIGURAÇÕES GERAIS */
 
 body {
     font-family: Arial, sans-serif;
-
     line-height: 1.5;
-
     color: #ffffff;
-
     background-color: #000000;
-
     min-height: 100vh;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 
-/*TELA DE ABERTURA*/
+/* TELA DE ABERTURA */
 
 #abertura {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100vh;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     background-color: #000000;
-
     z-index: 9999;
-
     pointer-events: none;
-
-    animation:
-        desaparecer-abertura 0.35s ease forwards;
-
+    animation: desaparecer-abertura 0.35s ease forwards;
     animation-delay: 1.65s;
 }
 
 
-/*LOGO DA ABERTURA*/
+/* LOGO DA ABERTURA */
 
 #logo-abertura {
-
     width: 180px;
-
     height: 180px;
-
     object-fit: contain;
-
-    animation:
-        logo-entrada 3.3s linear forwards;
+    animation: logo-entrada 3.3s linear forwards;
 }
 
 
-/*ANIMAÇÃO DA LOGO*/
+/* ANIMAÇÃO DA LOGO */
 
 @keyframes logo-entrada {
 
-
     0% {
-
         opacity: 0;
-
-        transform:
-            scale(0.2) rotate(0deg);
+        transform: scale(0.2) rotate(0deg);
     }
-
-
-
 
     15% {
-
         opacity: 1;
-
-        transform:
-            scale(1) rotate(216deg);
+        transform: scale(1) rotate(216deg);
     }
-
-
-
 
     100% {
-
         opacity: 0;
-
-        transform:
-            scale(0.35) rotate(1440deg);
+        transform: scale(0.35) rotate(1440deg);
     }
-
 }
 
 
-/*DESAPARECER A TELA DE ABERTURA*/
+/* DESAPARECER A TELA DE ABERTURA */
 
 @keyframes desaparecer-abertura {
 
     0% {
-
         opacity: 1;
     }
 
-
     100% {
-
         opacity: 0;
-
         visibility: hidden;
     }
-
 }
 
 
-/*LOGO DE FUNDO — MARCA D'ÁGUA*/
+/* BOTÃO TEMA */
+
+#botao-tema {
+    border: none;
+    background-color: transparent;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    transition: 0.3s;
+    position: relative;
+    left: 48%;
+    bottom: 110px;
+}
+
+#botao-tema:hover {
+    transform: rotate(20deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* LOGO DE FUNDO — MARCA D'ÁGUA */
 
 #logo-fundo {
-
     position: fixed;
-
     top: 50%;
     left: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
+    transform: translate(-50%, -50%);
     width: 300px;
-
     height: auto;
-
     opacity: 0.08;
-
     z-index: -1;
-
     pointer-events: none;
+    transition: filter 0.4s, opacity 0.4s;
 }
 
 
-/*CABEÇALHO FIXO*/
+/* CABEÇALHO FIXO */
 
 #cabecalho {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
-    padding: 20px;
-
+    padding: 5px;
     background: linear-gradient(135deg,
             rgb(45, 45, 224),
             rgb(92, 197, 101));
-
     text-align: center;
-
-
     z-index: 1000;
-
-
-
-    box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    transition: background 0.4s, box-shadow 0.4s;
 }
 
 
-/*LOGO + NOME*/
+/* LOGO + NOME */
 
 #titulo-logo {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 15px;
 }
 
 
-/*LOGO DO CABEÇALHO*/
+/* LOGO DO CABEÇALHO */
 
 #titulo-logo img {
-
     width: 50px;
-
     height: 50px;
-
     object-fit: contain;
 }
 
@@ -221,500 +174,464 @@ body {
 /* NOME */
 
 #titulo-logo h1 {
-
     font-size: 30px;
-
     color: #fafafa;
-
     font-family: "fashion", sans-serif;
 }
 
 
-/*MENU PRINCIPAL*/
+/* MENU PRINCIPAL */
 
 #menu-principal ul {
-
     list-style: none;
-
     margin-top: 20px;
 }
 
-
 #menu-principal ul li {
-
     display: inline-block;
-
     margin-right: 20px;
 }
 
-
 #menu-principal ul li a {
-
     color: #ffffff;
-
     text-decoration: none;
-
     font-weight: bold;
-
     padding: 10px;
-
     transition: 0.3s;
 }
 
-
 #menu-principal ul li a:hover {
-
     text-decoration: underline;
-
     opacity: 0.8;
 }
 
 
-/*CONTEÚDO PRINCIPAL*/
+/* CONTEÚDO PRINCIPAL */
 
 #conteudo-principal {
-
     position: relative;
-
     z-index: 1;
-
-
     padding-top: 140px;
 }
 
 
-/*INÍCIO*/
+/* INÍCIO */
 
 #home {
-
     text-align: center;
-
     padding: 25px;
 }
 
-
 #home h2 {
-
     font-family: "fashion", sans-serif;
-
     font-size: 30px;
-
     margin-bottom: 20px;
 }
 
-
 #home p {
-
     font-size: 16px;
-
     margin-bottom: 20px;
-
     color: #ffffff;
-
     font-family: "berlyna", sans-serif;
 }
 
 
-/*SOBRE*/
+/* SOBRE */
 
 #sobre {
-
     padding: 25px;
 }
-
 
 #sobre h2 {
-
     font-size: 24px;
-
     margin-bottom: 45px;
-
     color: #ffffff;
-
     font-family: "fashion", sans-serif;
-
     text-align: center;
 }
-
 
 #sobre p {
-
     font-size: 16px;
-
     margin-bottom: 20px;
-
     color: #ffffff;
-
     font-family: Arial, sans-serif;
-
     text-align: center;
 }
 
 
-/*AGENDA*/
+/* AGENDA */
 
 #agenda {
-
     padding: 25px;
 }
-
 
 #agenda h2 {
-
     font-size: 24px;
-
     margin-bottom: 45px;
-
     color: #ffffff;
-
     font-family: "fashion", sans-serif;
-
     text-align: center;
 }
-
 
 #agenda p {
-
     font-size: 16px;
-
     margin-bottom: 20px;
-
     color: #ffffff;
-
     font-family: Arial, sans-serif;
-
     text-align: center;
 }
-
 
 #agenda ul {
-
     list-style: none;
-
     text-align: center;
 }
 
-
 #agenda ul li {
-
     font-size: 16px;
-
     margin-bottom: 20px;
-
     color: #ffffff;
-
     font-family: Arial, sans-serif;
 }
 
 
-/*REDES SOCIAIS*/
+/* REDES SOCIAIS */
 
 #redes-sociais {
-
     padding: 25px;
-
     text-align: center;
 }
 
-
 #redes-sociais h2 {
-
     font-size: 24px;
-
     margin-bottom: 30px;
-
     color: #ffffff;
-
     font-family: "fashion", sans-serif;
 }
 
-
 #redes-sociais p {
-
     margin-bottom: 25px;
-
     font-family: Arial, sans-serif;
 }
 
-
 #redes-sociais ul {
-
     list-style: none;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 30px;
 }
 
-
 #redes-sociais li {
-
     display: inline-block;
 }
 
-
 #redes-sociais li a {
-
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     color: #ffffff;
-
     text-decoration: none;
-
     font-weight: bold;
-
     font-family: "fashion", sans-serif;
-
     transition: 0.3s;
 }
 
-
 #redes-sociais li img {
-
     width: 30px;
-
     height: 30px;
-
     object-fit: contain;
 }
 
-
 #redes-sociais li a:hover {
-
     transform: scale(1.08);
-
     opacity: 0.8;
 }
 
 
-/*CONVITE*/
+/* CONVITE */
 
 #convite {
-
     padding: 25px;
-
     text-align: center;
 }
 
-
 #convite h2 {
-
     padding: 20px;
-
     font-family: "fashion", sans-serif;
 }
 
-
 #convite p {
-
     padding: 20px;
-
     font-family: Arial, sans-serif;
 }
 
 
-/*FORMULÁRIO*/
+/* FORMULÁRIO */
 
 #formulario-convite {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 20px;
-
     max-width: 500px;
-
     margin: 30px auto;
-
     background: transparent;
-
     box-shadow: none;
-
     padding: 0;
 }
 
 
-/*CAMPOS DO FORMULÁRIO*/
+/* CAMPOS DO FORMULÁRIO */
 
 .campo-formulario {
-
     display: flex;
-
     flex-direction: column;
-
     text-align: left;
-
     gap: 6px;
 }
 
-
 .campo-formulario label {
-
     font-weight: bold;
-
     color: #ffffff;
 }
 
 
-/*INPUTS*/
+/* INPUTS */
 
 .campo-formulario input,
 .campo-formulario textarea {
-
     width: 100%;
-
     padding: 12px;
-
     background: transparent;
-
     border: 1px solid rgba(255, 255, 255, 0.45);
-
     border-radius: 8px;
-
     color: #ffffff;
-
     font-family: Arial, sans-serif;
-
     font-size: 16px;
-
     outline: none;
-
     transition: 0.3s;
 }
 
 
-/*PLACEHOLDER*/
+/* PLACEHOLDER */
 
 .campo-formulario input::placeholder,
 .campo-formulario textarea::placeholder {
-
     color: rgba(255, 255, 255, 0.6);
 }
 
 
-/*CAMPO SELECIONADO*/
+/* CAMPO SELECIONADO */
 
 .campo-formulario input:focus,
 .campo-formulario textarea:focus {
-
     border-color: rgb(92, 197, 101);
-
-    box-shadow:
-        0 0 8px rgba(92, 197, 101, 0.4);
+    box-shadow: 0 0 8px rgba(92, 197, 101, 0.4);
 }
 
 
-/*TEXTAREA*/
+/* TEXTAREA */
 
 .campo-formulario textarea {
-
     min-height: 140px;
-
     resize: vertical;
 }
 
 
-/*BOTÃO ENVIAR*/
+/* BOTÃO ENVIAR */
 
 #botao-enviar {
-
     padding: 12px 20px;
-
     border: none;
-
     border-radius: 8px;
-
     background-color: rgb(45, 45, 224);
-
     color: #ffffff;
-
     font-weight: bold;
-
     font-size: 16px;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
-
 #botao-enviar:hover {
-
     background-color: rgb(30, 30, 180);
-
     transform: scale(1.02);
 }
 
 
-/*CONTATO*/
+/* CONTATO */
 
 #contato {
-
     padding: 25px;
-
     text-align: center;
 }
 
-
 #contato h2 {
-
     padding: 20px;
-
     font-family: "fashion", sans-serif;
 }
 
-
 #contato p {
-
     padding: 20px;
-
     font-family: Arial, sans-serif;
 }
 
-
 #contato a {
-
     color: #5cc565;
-
     text-decoration: none;
 }
 
-
 #contato a:hover {
-
     text-decoration: underline;
 }
 
 
-/*RODAPÉ*/
+/* RODAPÉ */
 
 #rodape {
-
     padding: 25px;
-
     text-align: center;
-
     font-size: 14px;
 }
 
 
-/*CESSIBILIDADE*/
+/* ========================================= */
+/* TEMA CLARO */
+/* ========================================= */
+
+body.tema-claro {
+    background-color: #f5f5f5;
+    color: #222222;
+}
+
+
+/* CABEÇALHO */
+
+body.tema-claro #cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background: linear-gradient(135deg,
+            rgb(45, 45, 224),
+            rgb(92, 197, 101));
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+
+
+/* NOME DA BANDA */
+
+body.tema-claro #titulo-logo h1 {
+    color: #000000;
+}
+
+
+/* MENU */
+
+body.tema-claro #menu-principal ul li a {
+    color: #222222;
+}
+
+
+/* BOTÃO TEMA */
+
+body.tema-claro #botao-tema:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+
+/* LOGO DE FUNDO */
+
+body.tema-claro #logo-fundo {
+    filter: invert(1);
+    opacity: 0.08;
+}
+
+
+/* TEXTOS */
+
+body.tema-claro #home p,
+body.tema-claro #sobre h2,
+body.tema-claro #sobre p,
+body.tema-claro #agenda h2,
+body.tema-claro #agenda p,
+body.tema-claro #agenda ul li,
+body.tema-claro #redes-sociais h2,
+body.tema-claro #redes-sociais p,
+body.tema-claro #convite h2,
+body.tema-claro #convite p,
+body.tema-claro #contato h2,
+body.tema-claro #contato p,
+body.tema-claro #rodape {
+    color: #222222;
+}
+
+
+/* REDES SOCIAIS */
+
+body.tema-claro #redes-sociais li a {
+    color: #222222;
+}
+
+
+/* CONTATO */
+
+body.tema-claro #contato a {
+    color: #248a32;
+}
+
+
+/* FORMULÁRIO */
+
+body.tema-claro .campo-formulario label {
+    color: #222222;
+}
+
+body.tema-claro .campo-formulario input,
+body.tema-claro .campo-formulario textarea {
+    background-color: #ffffff;
+    color: #222222;
+    border-color: #bbbbbb;
+}
+
+body.tema-claro .campo-formulario input::placeholder,
+body.tema-claro .campo-formulario textarea::placeholder {
+    color: #777777;
+}
+
+
+/* RODAPÉ */
+
+body.tema-claro #rodape {
+    background-color: #ffffff;
+}
+
+
+/* TRANSIÇÕES */
+
+body,
+#cabecalho,
+#logo-fundo,
+.campo-formulario input,
+.campo-formulario textarea,
+#rodape {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
 
     #abertura {
-
         animation: none;
-
         display: none;
     }
 
