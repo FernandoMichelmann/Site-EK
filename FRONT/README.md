@@ -28,7 +28,8 @@ cd SITE-EK
 
 ##  Demonstração
 
-<img width="1440" height="900" alt="Captura de Tela 2026-08-04 às 15 49 46" src="https://github.com/user-attachments/assets/d07654fa-7aef-4f0e-b4af-485d0774d57c" />
+<img width="1440" height="900" alt="Captura de Tela 2026-08-05 às 11 45 48" src="https://github.com/user-attachments/assets/5ba571c5-d995-4642-94a9-6debbfce99a2" />
+
 
 ##  Autor
 
