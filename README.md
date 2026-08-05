@@ -1,37 +1,70 @@
-# Site EK
+Ekballo Sounds
 
-Site desenvolvido com foco em HTML e CSS, aplicando boas práticas de estruturação e estilização de páginas web.
+Website desenvolvido para a Ekballo Sounds, com o objetivo de apresentar a banda, sua identidade visual, conteúdos e principais canais digitais.
 
-##  Funcionalidades / Seções
+O projeto foi desenvolvido utilizando tecnologias fundamentais do desenvolvimento Front-end, com foco em estrutura, estilização, responsividade e interatividade.
 
-- [x] Página inicial
-- [x] Seção sobre/serviços
-- [x] Formulário de contato
-- [ ] Layout responsivo (mobile-first)
+Funcionalidades
 
-##  Tecnologias utilizadas
+* Apresentação da banda
+* Identidade visual personalizada
+* Seção de redes sociais
+* Links para plataformas digitais
+* Layout responsivo
+* Elementos interativos
+* Navegação entre as seções da página
+* Utilização de imagens e elementos visuais próprios
 
-- HTML5
-- CSS3
+Tecnologias
 
-##  Como executar o projeto
+* HTML5
+* CSS3
+* JavaScript
 
-```bash
-# Clone este repositório
-git clone https://github.com/FernandoMichelmann/SITE-EK.git
+Conceitos praticados
 
-# Acesse a pasta do projeto
-cd SITE-EK
+* Estruturação semântica com HTML
+* Flexbox e organização de layouts
+* Responsividade
+* Animações e transições com CSS
+* Manipulação do DOM
+* Eventos em JavaScript
+* Organização de arquivos
+* Desenvolvimento de interfaces web
 
-# Abra o arquivo index.html no navegador
-```
+Estrutura do projeto
 
-##  Demonstração
+SITE EK/
+├── FRONT/
+│   ├── EKBALLO.html
+│   ├── EKBALLO.CSS
+│   ├── EKBALLO.JS
+│   ├── README.md
+│   └── imagens/
+│       ├── spotify.jpg
+│       ├── instagram.jpg
+│       ├── youtube.jpeg
+│       └── icone ek.png
+└── .gitignore
 
-<img width="1440" height="900" alt="Captura de Tela 2026-08-05 às 11 45 48" src="https://github.com/user-attachments/assets/5ba571c5-d995-4642-94a9-6debbfce99a2" />
+Como executar
 
+1. Clone o repositório.
+2. Abra a pasta do projeto.
+3. Acesse a pasta FRONT.
+4. Abra o arquivo EKBALLO.html no navegador.
 
-##  Autor
+Não é necessário instalar dependências.
 
-**Fernando Michelmann**
-[LinkedIn](https://www.linkedin.com/in/fernando-michelmann-979105416/) • [GitHub](https://github.com/FernandoMichelmann) 
+Objetivo
+
+O projeto foi desenvolvido com o objetivo de aplicar na prática conhecimentos de HTML, CSS e JavaScript, criando uma interface personalizada para um projeto real.
+
+Além da prática técnica, o desenvolvimento envolveu decisões relacionadas à identidade visual, organização de conteúdo, experiência do usuário e apresentação de informações.
+
+Autor
+
+Fernando Michelmann
+
+* GitHub: https://github.com/FernandoMichelmann
+* LinkedIn: https://www.linkedin.com/in/fernando-michelmann-979105416/
