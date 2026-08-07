@@ -474,10 +474,10 @@ main {
   right: var(--gutter);
 }
 
-.tag-b {
+/*.tag-b {
   bottom: 30px;
   left: var(--gutter);
-}
+}*/
 
 .tag-c {
   top: 46%;
