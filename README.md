@@ -43,7 +43,7 @@ O projeto também faz parte do meu processo de evolução no desenvolvimento **F
 
 ### Preview
 
-<img width="1440" height="900" alt="Preview do SITE-EK" src="https://github.com/user-attachments/assets/5ba571c5-d995-4642-94a9-6debbfce99a2" />
+<img width="1440" height="900" alt="Captura de Tela 2026-08-07 às 11 22 57" src="https://github.com/user-attachments/assets/759cc6f6-31dc-4251-aa5c-2acd7b2b772a" />
 
 ### Site
 
