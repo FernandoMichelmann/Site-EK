@@ -1,37 +1,109 @@
-# Site EK
+# SITE-EK
 
-Site desenvolvido com foco em HTML e CSS, aplicando boas práticas de estruturação e estilização de páginas web.
+Website desenvolvido para a **Ekballo Sounds**, com uma interface visual inspirada no universo musical e audiovisual da banda.
 
-##  Funcionalidades / Seções
+O projeto foi construído do zero utilizando tecnologias web fundamentais, com foco em **estrutura semântica, identidade visual, interações, responsividade e experiência do usuário**.
 
-- [x] Página inicial
-- [x] Seção sobre/serviços
-- [x] Formulário de contato
-- [ ] Layout responsivo (mobile-first)
+## Sobre o projeto
 
-##  Tecnologias utilizadas
+O SITE-EK foi desenvolvido como uma aplicação web institucional para apresentar a identidade da Ekballo Sounds, seus conteúdos e canais de contato em uma interface moderna e imersiva.
 
-- HTML5
-- CSS3
+O projeto também faz parte do meu processo de evolução no desenvolvimento **Front-End**, colocando em prática conceitos de HTML, CSS e JavaScript em um projeto real.
 
-##  Como executar o projeto
+## Funcionalidades
 
-```bash
-# Clone este repositório
-git clone https://github.com/FernandoMichelmann/SITE-EK.git
+* Página inicial com apresentação da banda
+* Interface visual personalizada
+* Seções institucionais
+* Área de contato
+* Formulário para envio de mensagens
+* Elementos interativos utilizando JavaScript
+* Animações e efeitos visuais
+* Layout responsivo
+* Navegação entre as seções da página
+* Integração com redes sociais
+* Publicação através do GitHub Pages
 
-# Acesse a pasta do projeto
-cd SITE-EK
+## Tecnologias
 
-# Abra o arquivo index.html no navegador
+### Front-End
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Ferramentas
+
+* Git
+* GitHub
+* GitHub Pages
+* Visual Studio Code
+
+## Demonstração
+
+### Preview
+
+<img width="1440" height="900" alt="Preview do SITE-EK" src="https://github.com/user-attachments/assets/5ba571c5-d995-4642-94a9-6debbfce99a2" />
+
+### Site
+
+Acesse a versão publicada do projeto:
+
+**[Acessar SITE-EK](https://fernandomichelmann.github.io/Site-EK/)**
+
+### Repositório
+
+**[GitHub — SITE-EK](https://github.com/FernandoMichelmann/SITE-EK)**
+
+## Estrutura do projeto
+
+```text
+SITE-EK/
+│
+├── BACK/
+├── FONTES/
+├── imagem/
+├── index.html
+├── EKBALLO.CSS
+├── EKBALLO.JS
+└── README.md
 ```
 
-##  Demonstração
+## Execução local
 
-<img width="1440" height="900" alt="Captura de Tela 2026-08-05 às 11 45 48" src="https://github.com/user-attachments/assets/5ba571c5-d995-4642-94a9-6debbfce99a2" />
+Clone o repositório:
 
+```bash
+git clone https://github.com/FernandoMichelmann/SITE-EK.git
+```
 
-##  Autor
+Entre na pasta:
+
+```bash
+cd SITE-EK
+```
+
+Depois, abra o arquivo `index.html` no navegador.
+
+Durante o desenvolvimento, também é possível utilizar o **Live Server** para executar o projeto localmente.
+
+## Objetivo
+
+Este projeto foi desenvolvido com o objetivo de aplicar na prática conhecimentos de desenvolvimento web, especialmente em:
+
+* Estruturação semântica com HTML
+* Estilização avançada com CSS
+* Responsividade
+* Manipulação do DOM
+* Interações com JavaScript
+* Organização de arquivos
+* Controle de versão com Git
+* Publicação de aplicações web
+
+## Autor
 
 **Fernando Michelmann**
-[LinkedIn](https://www.linkedin.com/in/fernando-michelmann-979105416/) • [GitHub](https://github.com/FernandoMichelmann) 
+
+Desenvolvedor em formação com foco em desenvolvimento **Front-End e Back-End**.
+
+[LinkedIn](https://www.linkedin.com/in/fernando-michelmann-979105416/) • [GitHub](https://github.com/FernandoMichelmann)
