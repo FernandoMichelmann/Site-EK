@@ -4,16 +4,12 @@
   const isTouch = window.matchMedia("(hover: none)").matches;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* =========================================================
-     ANO DO FOOTER
-     ========================================================= */
+  /* ANO DO FOOTER */
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
 
-  /* =========================================================
-     CURSOR COM LOGO DA EKBALLO
-     ========================================================= */
+  /* CURSOR COM LOGO DA EKBALLO */
   if (!isTouch) {
     const ring = document.querySelector("[data-cursor-ring]");
 
@@ -48,9 +44,7 @@
     }
   }
 
-  /* =========================================================
-     HUD
-     ========================================================= */
+  /* HUD */
   const hudTime = document.querySelector("[data-hud-time]");
   const hudPos = document.querySelector("[data-hud-pos]");
   const hudScroll = document.querySelector("[data-hud-scroll]");
@@ -99,9 +93,7 @@
   window.addEventListener("scroll", updateScrollHud, { passive: true });
   window.addEventListener("resize", updateScrollHud);
 
-  /* =========================================================
-     MENU MOBILE
-     ========================================================= */
+  /* MENU MOBILE */
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
 
@@ -127,9 +119,7 @@
     });
   }
 
-  /* =========================================================
-     PARALLAX DO HERO
-     ========================================================= */
+  /* PARALLAX DO HERO */
   if (!isTouch && !prefersReducedMotion) {
     const elements = document.querySelectorAll("[data-parallax]");
 
@@ -146,9 +136,7 @@
     });
   }
 
-  /* =========================================================
-     GSAP
-     ========================================================= */
+  /* GSAP */
   const hasGsap = window.gsap && window.ScrollTrigger;
 
   if (hasGsap) {
@@ -263,9 +251,7 @@
     }
   }
 
-  /* =========================================================
-     MARQUEE — PREENCHER LARGURA DINAMICAMENTE
-     ========================================================= */
+  /* MARQUEE — PREENCHER LARGURA DINAMICAMENTE */
   const marqueeTrack = document.querySelector(".marquee-track");
 
   if (marqueeTrack) {
@@ -303,9 +289,7 @@
     });
   }
 
-  /* =========================================================
-     FORMULÁRIO
-     ========================================================= */
+  /* FORMULÁRIO */
   const form = document.querySelector("#formulario-convite");
 
   if (form) {
@@ -332,9 +316,7 @@
     });
   }
 
-  /* =========================================================
-     SCROLL SUAVE
-     ========================================================= */
+  /* SCROLL SUAVE */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
