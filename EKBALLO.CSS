@@ -348,7 +348,7 @@ textarea {
 .mobile-nav {
   position: fixed;
   inset: 0;
-  z-index: 350;
+  z-index: 410;
   background: var(--bg);
   display: flex;
   flex-direction: column;
@@ -475,7 +475,7 @@ main {
 }
 
 .tag-b {
-  bottom: 14%;
+  bottom: 3%;
   left: var(--gutter);
 }
 
