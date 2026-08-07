@@ -3,341 +3,1010 @@
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ekballo Sounds</title>
+  <meta name="description"
+    content="Ekballo Sounds — banda gospel com uma sonoridade contemporânea que une fé, energia e música.">
 
-    <link rel="stylesheet" href="EKBALLO.CSS">
+  <title>Ekballo Sounds</title>
+
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="EKBALLO.CSS">
 
 </head>
 
 
 <body>
 
-    <div id="abertura">
 
-        <img id="logo-abertura" src="imagens/icone ek.png" alt="Logo da Ekballo Sounds">
+  <!-- =====================================================
+         CURSOR PERSONALIZADO
+         ===================================================== -->
+
+  <div class="cursor-dot" data-cursor-dot></div>
+
+  <div class="cursor-ring" data-cursor-ring>
+
+    <img src="imagem/icone ek.png" alt="Logo Ekballo Sounds">
+
+  </div>
+
+
+
+  <!-- =====================================================
+         GRAIN / TEXTURA
+         ===================================================== -->
+
+  <div class="grain"></div>
+
+
+
+  <!-- =====================================================
+         HUD
+         ===================================================== -->
+
+  <div class="hud">
+
+    <div class="hud-row">
+
+      <span class="hud-key">
+        TIME
+      </span>
+
+      <span class="hud-val" data-hud-time>
+        --:--:--
+      </span>
 
     </div>
 
 
-    <img id="logo-fundo" src="imagens/icone ek.png" alt="">
+    <div class="hud-row">
+
+      <span class="hud-key">
+        POS
+      </span>
+
+      <span class="hud-val" data-hud-pos>
+        X0000 Y0000
+      </span>
+
+    </div>
 
 
-    <header id="cabecalho">
+    <div class="hud-row">
 
-        <div id="titulo-logo">
+      <span class="hud-key">
+        SCROLL
+      </span>
 
-            <img id="logo-cabecalho" src="imagens/icone ek.png" alt="Logo da Ekballo Sounds">
+      <span class="hud-val" data-hud-scroll>
+        000%
+      </span>
 
-            <h1>
-                Ekballo Sounds
-            </h1>
+    </div>
+
+
+    <div class="hud-row">
+
+      <span class="hud-key">
+        SECTION
+      </span>
+
+      <span class="hud-val" data-hud-section>
+        01 / HOME
+      </span>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+  <header class="site-header">
+
+
+    <a href="#home" class="logo" data-hover>
+
+      <img src="imagem/icone ek.png" alt="Ekballo Sounds" style="width: 28px; height: 28px; object-fit: contain;">
+
+      <span>
+        EKBALLO
+      </span>
+
+      <span class="logo-mark">
+        SOUNDS®️
+      </span>
+
+    </a>
+
+
+
+    <!-- MENU DESKTOP -->
+
+    <nav class="main-nav" aria-label="Menu principal">
+
+
+      <a href="#home" data-hover>
+        Início
+      </a>
+
+
+      <a href="#sobre" data-hover>
+        Sobre
+      </a>
+
+
+      <a href="#loja" data-hover>
+        Loja
+      </a>
+
+
+      <a href="#redes-sociais" data-hover>
+        Redes
+      </a>
+
+
+      <a href="#convite" data-hover>
+        Convide a EK
+      </a>
+
+
+      <a href="#contato" data-hover>
+        Contato
+      </a>
+
+    </nav>
+
+
+
+    <!-- MENU MOBILE -->
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">
+
+      <span></span>
+
+      <span></span>
+
+    </button>
+
+
+  </header>
+
+
+
+  <!-- =====================================================
+         MENU MOBILE ABERTO
+         ===================================================== -->
+
+  <nav class="mobile-nav" data-mobile-nav aria-hidden="true">
+
+
+    <a href="#home" data-mobile-link>
+      Início
+    </a>
+
+
+    <a href="#sobre" data-mobile-link>
+      Sobre
+    </a>
+
+
+    <a href="#loja" data-mobile-link>
+      Loja
+    </a>
+
+
+    <a href="#redes-sociais" data-mobile-link>
+      Redes Sociais
+    </a>
+
+
+    <a href="#convite" data-mobile-link>
+      Convide a EK
+    </a>
+
+
+    <a href="#contato" data-mobile-link>
+      Contato
+    </a>
+
+
+    <div class="mobile-nav-foot">
+
+      EKBALLO SOUNDS — 2026
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+  <main>
+
+
+
+    <!-- =================================================
+             HOME / HERO
+             ================================================= -->
+
+    <section id="home" class="hero" data-section-name="HOME">
+
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="imagem/videobateria-v2.mp4" type="video/mp4">
+      </video>
+
+      <div class="hero-index">
+
+        01 / EKBALLO SOUNDS
+
+      </div>
+
+      <div class="hero-scatter">
+
+        <span class="scatter-item tag-a" data-parallax="0.3">
+          WORSHIP / ROCK / GOSPEL
+        </span>
+
+        <span class="scatter-item tag-b" data-parallax="0.15">
+          FÉ + MÚSICA + PROPÓSITO
+        </span>
+
+        <span class="scatter-item tag-c" data-parallax="0.25">
+          CURITIBA / PR
+        </span>
+
+        <span class="scatter-item tag-d">
+          ↓ SCROLL PARA CONHECER
+        </span>
+
+      </div>
+
+      <h1 class="hero-title">
+
+        <span class="line">
+          <span class="reveal">
+            EK
+          </span>
+        </span>
+
+        <span class="line">
+          <span class="reveal">
+            BA
+          </span>
+        </span>
+
+        <span class="line accent">
+          <span class="reveal">
+            LLO<sup>®</sup>
+          </span>
+        </span>
+
+      </h1>
+
+      <div class="hero-sub" data-parallax="0.12">
+
+        <p>
+          Uma banda que acredita que
+          <em>música também é missão.</em>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+             MARQUEE
+             ================================================= -->
+
+    <div class="marquee">
+
+      <div class="marquee-track">
+
+        <div class="marquee-content">
+
+          <span>EKBALLO SOUNDS</span>
+          <span class="dot">●</span>
+
+          <span>FÉ</span>
+          <span class="dot">●</span>
+
+          <span>ADORAÇÃO</span>
+          <span class="dot">●</span>
+
+          <span>ROCK</span>
+          <span class="dot">●</span>
+
+          <span>GOSPEL</span>
+          <span class="dot">●</span>
+
+        </div>
+
+        <div class="marquee-content">
+
+          <span>EKBALLO SOUNDS</span>
+          <span class="dot">●</span>
+
+          <span>FÉ</span>
+          <span class="dot">●</span>
+
+          <span>ADORAÇÃO</span>
+          <span class="dot">●</span>
+
+          <span>ROCK</span>
+          <span class="dot">●</span>
+
+          <span>GOSPEL</span>
+          <span class="dot">●</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+             SOBRE
+             ================================================= -->
+
+    <section id="sobre" class="about" data-section-name="SOBRE">
+
+
+      <span class="section-eyebrow">
+
+        02 / SOBRE A EK
+
+      </span>
+
+
+      <h2 class="about-title">
+        Afinal, quem é a
+        <em>Ekballo Sounds<sup>®</sup>?</em>
+      </h2>
+
+
+
+      <div class="about-body">
+
+
+        <p class="about-lead">
+
+          A Ekballo Sounds é uma banda gospel
+          formada em 2023, com cinco integrantes
+          e uma proposta de levar uma sonoridade
+          contemporânea para a música cristã.
+
+        </p>
+
+
+
+        <p class="about-text">
+
+          A banda mistura elementos do
+          <span class="hl">
+            pop, rock e outros estilos contemporâneos
+          </span>,
+          criando uma identidade musical própria
+          e uma experiência intensa durante suas
+          apresentações.
+
+        </p>
+
+
+
+        <p class="about-text">
+
+          O nome
+          <span class="hl-mono">
+            "EKBALLO"
+          </span>
+          vem do grego e significa
+          "lançar" ou "enviar".
+
+          Esse significado representa a missão
+          da banda de espalhar uma mensagem de
+          fé, esperança e transformação através
+          da música.
+
+        </p>
+
+
+
+        <p class="about-text">
+
+          Com letras que abordam temas como
+          adoração, amor e renovação espiritual,
+          a Ekballo Sounds busca criar momentos
+          profundos de louvor e conexão com Deus.
+
+        </p>
+
+
+
+        <p class="about-text">
+
+          A energia das apresentações é parte
+          fundamental da identidade da banda,
+          unindo música, emoção e uma mensagem
+          cristã que busca alcançar pessoas
+          dentro e fora da igreja.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="about-coords">
+
+        <span>
+          FORMED: 2023
+        </span>
+
+        <span>
+          MEMBERS: 05
+        </span>
+
+        <span>
+          GENRE: GOSPEL / ROCK
+        </span>
+
+        <span>
+          LOCATION: PR / BR
+        </span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+             LOJA
+             ================================================= -->
+
+    <section id="loja" class="store" data-section-name="LOJA">
+
+
+      <div class="section-head">
+
+
+        <div>
+
+          <span class="section-eyebrow">
+
+            03 / LOJA OFICIAL
+
+          </span>
+
+
+          <h2 class="section-title">
+
+            Nossa Loja
+
+          </h2>
 
         </div>
 
 
-        <nav id="menu-principal" aria-label="Menu principal">
+        <p class="section-note">
 
-            <ul>
+          A MENSAGEM QUE A GENTE CANTA
 
-                <li>
-                    <a href="#home">
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#sobre">
-                        Sobre
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#agenda">
-                        Agenda
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#redes-sociais">
-                        Redes Sociais
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#convite">
-                        Convide a EK
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contato">
-                        Contato
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-
-        <button id="botao-tema" type="button" aria-label="Alterar tema">
-            ☀️
-        </button>
-
-    </header>
-
-
-    <main id="conteudo-principal">
-
-        <section id="home">
-
-            <h2>
-                EK
-            </h2>
-
-            <p>
-                AH, PAZ IGREJA! VOCÊS ESTÃO FELIZES? 🔥
-            </p>
-
-            <p>
-                ENTÃO VAMOOO!
-            </p>
-
-        </section>
-
-
-        <section id="sobre">
-
-            <h2>
-                Sobre Nós
-            </h2>
-
-            <p>
-                A Ekballo Sounds é uma banda gospel formada em 2023,
-                composta por cinco integrantes.
-            </p>
-
-            <p>
-                A banda se destaca pela sua proposta de trazer uma
-                sonoridade inovadora dentro do gênero gospel, misturando
-                elementos do pop, rock e outros estilos contemporâneos.
-            </p>
-
-            <p>
-                O nome "Ekballo", que vem do grego e significa
-                "lançar" ou "enviar", reflete a missão da banda de
-                espalhar uma mensagem de fé, esperança e transformação
-                através da música.
-            </p>
-
-            <p>
-                Com letras que abordam temas como adoração, amor e
-                renovação espiritual, a Ekballo Sounds busca proporcionar
-                uma experiência de louvor profunda e emocional aos seus
-                ouvintes.
-            </p>
-
-            <p>
-                A banda é conhecida pela energia positiva em suas
-                apresentações e pelo compromisso em criar músicas que
-                inspirem a conexão com Deus e a vivência cristã.
-            </p>
-
-        </section>
-
-
-        <section id="agenda">
-
-            <h2>
-                Agenda da EK
-            </h2>
-
-            <p>
-                Confira a agenda da Ekballo e não perca a oportunidade
-                de vivenciar momentos inesquecíveis de adoração e
-                música ao vivo.
-            </p>
-
-            <ul>
-
-                <li>
-                    <strong>Data:</strong> 00/00/2026 -
-                    <strong>Local:</strong> A - Cidade A
-                </li>
-
-                <li>
-                    <strong>Data:</strong> 00/00/2026 -
-                    <strong>Local:</strong> B - Cidade B
-                </li>
-
-                <li>
-                    <strong>Data:</strong> 00/00/2026 -
-                    <strong>Local:</strong> C - Cidade C
-                </li>
-
-            </ul>
-
-        </section>
-
-
-        <section id="redes-sociais">
-
-            <h2>
-                Redes Sociais
-            </h2>
-
-            <p>
-                Siga a Ekballo Sounds nas redes sociais para ficar
-                por dentro das novidades, lançamentos e eventos:
-            </p>
-
-            <ul>
-
-                <li>
-
-                    <a href="https://www.instagram.com/ekballo.sounds?igsh=ZnM4MXZzcGxnd2w=" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="imagens/instagram.jpg" alt="Instagram">
-
-                        <span>
-                            Instagram
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="imagens/youtube.jpeg" alt="YouTube">
-
-                        <span>
-                            YouTube
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="imagens/spotify.jpg" alt="Spotify">
-
-                        <span>
-                            Spotify
-                        </span>
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </section>
-
-
-        <section id="convite">
-
-            <h2>
-                Convide a EK para seu evento
-            </h2>
-
-            <p>
-                Quer levar a Ekballo Sounds para o seu evento?
-                Preencha o formulário abaixo e entre em contato conosco.
-            </p>
-
-
-            <form id="formulario-convite" action="submit_form.php" method="post">
-
-                <div class="campo-formulario">
-
-                    <label for="nome">
-                        Nome
-                    </label>
-
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-
-                </div>
-
-
-                <div class="campo-formulario">
-
-                    <label for="email">
-                        Email
-                    </label>
-
-                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-
-                </div>
-
-
-                <div class="campo-formulario">
-
-                    <label for="mensagem">
-                        Mensagem
-                    </label>
-
-                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte um pouco sobre seu evento"
-                        required></textarea>
-
-                </div>
-
-
-                <button type="submit" id="botao-enviar">
-                    Enviar
-                </button>
-
-            </form>
-
-        </section>
-
-
-        <section id="contato">
-
-            <h2>
-                Contato
-            </h2>
-
-            <p>
-
-                Entre em contato conosco através do email:
-
-                <a href="mailto:agendaekballo@gmail.com">
-                    agendaekballo@gmail.com
-                </a>
-
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <footer id="rodape">
-
-        <p>
-            &copy; 2026 EkballoSounds.
-            Todos os direitos reservados.
         </p>
 
-    </footer>
+      </div>
 
 
-    <script src="EKBALLO.JS"></script>
+
+      <div class="store-grid" data-hover-project>
+
+
+        <div class="store-video-wrap">
+
+          <video class="store-video" autoplay muted loop playsinline>
+            <source src="imagem/camisajesus-v2.mp4" type="video/mp4">
+          </video>
+
+          <span class="store-video-tag">
+
+            LOJA / EK
+
+          </span>
+
+        </div>
+
+
+
+        <div class="store-info">
+
+
+          <span class="project-number">
+
+            01
+
+          </span>
+
+
+          <h2 class="about-title-titulo">
+            VISTA ESSA
+            <em>MENSAGEM!</em>
+          </h2>
+
+
+          <p class="store-lead">
+
+            Camisetas, moletons e itens
+            exclusivos criados pela Ekballo
+            Sounds para quem também acredita
+            que música é missão.
+
+          </p>
+
+
+          <p class="store-text">
+
+            Cada peça carrega um pouco da
+            nossa história e do que a gente
+            vive em cada apresentação — feita
+            para quem quer levar essa mensagem
+            para além do palco.
+
+          </p>
+
+
+          <ul class="store-list">
+
+            <li>
+              PRODUÇÃO LIMITADA
+            </li>
+
+            <li>
+              ENVIO PARA TODO O BRASIL
+            </li>
+
+            <li>
+              RENDA REVERTIDA PARA A BANDA
+            </li>
+
+          </ul>
+
+
+          <a href="#contato" class="project-cta store-cta" data-hover>
+
+            SAIBA MAIS
+
+            <span class="arrow">
+              →
+            </span>
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+             REDES SOCIAIS
+             ================================================= -->
+
+    <!-- =================================================
+     REDES SOCIAIS
+     ================================================= -->
+
+    <section id="redes-sociais" class="stats" data-section-name="REDES">
+
+      <span class="section-eyebrow">
+        04 / CONECTE-SE
+      </span>
+
+      <div class="stats-grid">
+
+        <!-- INSTAGRAM -->
+
+        <div class="stat">
+
+          <span class="stat-number">
+            EK
+          </span>
+
+          <span class="stat-label">
+            INSTAGRAM
+          </span>
+
+          <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer"
+            class="contact-link">
+
+            <span class="contact-link-label">
+              @
+            </span>
+
+            <span class="contact-link-value">
+              Instagram
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <!-- YOUTUBE -->
+
+        <div class="stat">
+
+          <span class="stat-number">
+            BA
+          </span>
+
+          <span class="stat-label">
+            YOUTUBE
+          </span>
+
+          <a href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank" rel="noopener noreferrer"
+            class="contact-link">
+
+            <span class="contact-link-label">
+              →
+            </span>
+
+            <span class="contact-link-value">
+              YouTube
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <!-- SPOTIFY -->
+
+        <div class="stat">
+
+          <span class="stat-number">
+            LLO
+          </span>
+
+          <span class="stat-label">
+            SPOTIFY
+          </span>
+
+          <a href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank"
+            rel="noopener noreferrer" class="contact-link">
+
+            <span class="contact-link-label">
+              →
+            </span>
+
+            <span class="contact-link-value">
+              Spotify
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <!-- CONVITE -->
+
+        <div class="stat">
+
+          <div class="stat-logo">
+
+            <img src="imagem/icone ek.png" alt="Ekballo Sounds">
+
+          </div>
+
+          <span class="stat-label">
+
+          </span>
+
+          <a href="#convite" class="contact-link">
+
+            <span class="contact-link-label">
+              →
+            </span>
+
+            <span class="contact-link-value">
+              Convide a EK
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =================================================
+             CONVITE
+             ================================================= -->
+
+    <section id="convite" class="about" data-section-name="CONVITE">
+
+
+      <span class="section-eyebrow">
+
+        05 / CONVITE A EK
+
+      </span>
+
+
+      <h2 class="about-title-titulo">
+        Leve a EK para
+        <em>seu evento.</em>
+      </h2>
+
+      <div class="about-body">
+
+
+        <p class="about-lead">
+
+          Quer levar a Ekballo Sounds
+          para o seu evento?
+
+        </p>
+
+
+        <p class="about-text">
+
+          Preencha o formulário abaixo
+          e entre em contato conosco.
+
+          Conte um pouco sobre seu evento,
+          sua cidade e o que você está planejando.
+
+        </p>
+
+      </div>
+
+
+
+      <form id="formulario-convite" action="submit_form.php" method="post">
+
+
+        <div class="campo-formulario">
+
+          <label for="nome">
+            Nome
+          </label>
+
+
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        </div>
+
+
+
+        <div class="campo-formulario">
+
+          <label for="email">
+            Email
+          </label>
+
+
+          <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+        </div>
+
+
+
+        <div class="campo-formulario">
+
+          <label for="mensagem">
+            Mensagem
+          </label>
+
+
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte um pouco sobre seu evento"
+            required></textarea>
+
+        </div>
+
+
+
+        <button type="submit" id="botao-enviar" data-hover>
+
+          ENVIAR
+
+        </button>
+
+      </form>
+
+    </section>
+
+
+
+    <!-- =================================================
+             CONTATO
+             ================================================= -->
+
+    <section id="contato" class="contact" data-section-name="CONTATO">
+
+
+      <span class="section-eyebrow">
+
+        06 / CONTATO
+
+      </span>
+
+
+      <h2 class="contact-title">
+
+        Fale com
+        <em>a EK.</em>
+
+      </h2>
+
+
+
+      <div class="contact-links">
+
+
+        <a href="mailto:agendaekballo@gmail.com" class="contact-link" data-hover>
+
+
+          <span class="contact-link-label">
+
+            EMAIL
+
+          </span>
+
+
+          <span class="contact-link-value">
+
+            agendaekballo@gmail.com
+
+          </span>
+
+        </a>
+
+
+
+        <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer"
+          class="contact-link" data-hover>
+
+
+          <span class="contact-link-label">
+
+            INSTAGRAM
+
+          </span>
+
+
+          <span class="contact-link-value">
+
+            @ekballo.sounds
+
+          </span>
+
+        </a>
+
+
+
+        <a href="#convite" class="contact-link" data-hover>
+
+
+          <span class="contact-link-label">
+
+            EVENTOS
+
+          </span>
+
+
+          <span class="contact-link-value">
+
+            Convide a Ekballo
+
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+  <footer class="site-footer">
+
+
+    <span class="footer-brand">
+
+      EKBALLO SOUNDS<sup>®</sup>
+
+    </span>
+
+
+    <span>
+
+      © <span data-year>2026</span>
+      EkballoSounds.
+      Todos os direitos reservados.
+
+    </span>
+
+
+    <div class="footer-social">
+
+
+      <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer" data-hover>
+
+        Instagram
+
+      </a>
+
+
+      <a href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank" rel="noopener noreferrer"
+        data-hover>
+
+        YouTube
+
+      </a>
+
+
+      <a href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank" rel="noopener noreferrer"
+        data-hover>
+
+        Spotify
+
+      </a>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+         GSAP
+         ===================================================== -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="EKBALLO.JS"></script>
+
 
 </body>
 
