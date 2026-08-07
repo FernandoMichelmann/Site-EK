@@ -354,7 +354,8 @@ textarea {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  padding: 2rem var(--gutter);
+  padding: 7.5rem var(--gutter) 2rem;
+  overflow-y: auto;
   transform: translateY(-100%);
   transition: transform .5s var(--ease-soft);
 }
@@ -1281,6 +1282,10 @@ main {
   .tag-a {
     top: auto;
     bottom: 30%;
+  }
+
+  .tag-b {
+    display: none;
   }
 }
 
