@@ -474,10 +474,9 @@ main {
   right: var(--gutter);
 }
 
-.hero-sub {
-  margin-top: 3rem;
-  margin-bottom: 4rem;
-  max-width: 32ch;
+.tag-b {
+  bottom: 0%;
+  left: var(--gutter);
 }
 
 .tag-c {
