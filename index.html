@@ -2,166 +2,129 @@
 <html lang="pt-BR">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-    content="Ekballo Sounds — banda gospel com uma sonoridade contemporânea que une fé, energia e música.">
+  <meta name="description" content="Ekballo Sounds — Worship, Rock e Gospel. Música, fé e propósito.">
 
-  <title>Ekballo Sounds</title>
+  <icon rel="icon" type="image/png" href="imagem/icone ek.png"></icon>
 
-  <link rel="icon" type="image/png" href="imagem/icone ek.png">
+  <title>Ekballo Sounds®</title>
 
   <!-- Google Fonts -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-
   <!-- CSS -->
-
   <link rel="stylesheet" href="EKBALLO.CSS">
-
 </head>
-
 
 <body>
 
+  <!-- =========================================================
+       GRAIN / TEXTURA
+  ========================================================== -->
 
-  <!-- CURSOR PERSONALIZADO -->
+  <div class="grain" aria-hidden="true"></div>
 
-  <div class="cursor-dot" data-cursor-dot></div>
 
-  <div class="cursor-ring" data-cursor-ring>
+  <!-- =========================================================
+       CURSOR PERSONALIZADO
+  ========================================================== -->
 
-    <img src="imagem/icone ek.png" alt="Logo Ekballo Sounds">
-
+  <div class="cursor-ring" data-cursor-ring aria-hidden="true">
+    <img src="imagem/icone ek.png" alt="">
   </div>
 
 
+  <!-- =========================================================
+       HUD
+  ========================================================== -->
 
-  <!-- GRAIN / TEXTURA -->
-
-  <div class="grain"></div>
-
-
-
-  <!-- HUD -->
-
-  <div class="hud">
+  <aside class="hud" aria-hidden="true">
 
     <div class="hud-row">
-
-      <span class="hud-key">
-        TIME
-      </span>
+      <span class="hud-key">TIME</span>
 
       <span class="hud-val" data-hud-time>
         --:--:--
       </span>
-
     </div>
 
-
     <div class="hud-row">
-
-      <span class="hud-key">
-        POS
-      </span>
+      <span class="hud-key">POS</span>
 
       <span class="hud-val" data-hud-pos>
         X0000 Y0000
       </span>
-
     </div>
 
-
     <div class="hud-row">
-
-      <span class="hud-key">
-        SCROLL
-      </span>
+      <span class="hud-key">SCROLL</span>
 
       <span class="hud-val" data-hud-scroll>
         000%
       </span>
-
     </div>
 
-
     <div class="hud-row">
-
-      <span class="hud-key">
-        SECTION
-      </span>
+      <span class="hud-key">SECTION</span>
 
       <span class="hud-val" data-hud-section>
         01 / HOME
       </span>
-
     </div>
 
-  </div>
+  </aside>
 
 
-
-  <!-- HEADER -->
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
 
   <header class="site-header">
 
+    <a href="#home" class="logo" data-hover aria-label="Ekballo Sounds - Início">
 
-    <a href="#home" class="logo" data-hover>
+      <img src="imagem/icone ek.png" alt="Ekballo Sounds">
 
-      <img src="imagem/icone ek.png" alt="Ekballo Sounds" style="width: 28px; height: 28px; object-fit: contain;">
-
-      <span>
-        EKBALLO
-      </span>
+      <span>EKBALLO</span>
 
       <span class="logo-mark">
-        SOUNDS®️
+        SOUNDS®
       </span>
 
     </a>
-
 
 
     <!-- MENU DESKTOP -->
 
     <nav class="main-nav" aria-label="Menu principal">
 
-
       <a href="#home" data-hover>
         Início
       </a>
-
 
       <a href="#sobre" data-hover>
         Sobre
       </a>
 
-
       <a href="#loja" data-hover>
         Loja
       </a>
-
 
       <a href="#redes-sociais" data-hover>
         Redes
       </a>
 
-
       <a href="#convite" data-hover>
         Convide a EK
       </a>
-
 
       <a href="#contato" data-hover>
         Contato
@@ -170,86 +133,76 @@
     </nav>
 
 
-
     <!-- MENU MOBILE -->
 
-    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">
-
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation"
+      aria-label="Abrir menu">
       <span></span>
-
       <span></span>
-
     </button>
-
 
   </header>
 
 
+  <!-- =========================================================
+       MENU MOBILE
+  ========================================================== -->
 
-  <!-- MENU MOBILE ABERTO -->
-
-  <nav class="mobile-nav" data-mobile-nav aria-hidden="true">
-
+  <nav id="mobile-navigation" class="mobile-nav" data-mobile-nav aria-hidden="true" aria-label="Menu mobile">
 
     <a href="#home" data-mobile-link>
       Início
     </a>
 
-
     <a href="#sobre" data-mobile-link>
       Sobre
     </a>
-
 
     <a href="#loja" data-mobile-link>
       Loja
     </a>
 
-
     <a href="#redes-sociais" data-mobile-link>
       Redes Sociais
     </a>
-
 
     <a href="#convite" data-mobile-link>
       Convide a EK
     </a>
 
-
     <a href="#contato" data-mobile-link>
       Contato
     </a>
 
-
     <div class="mobile-nav-foot">
-
       EKBALLO SOUNDS — 2026
-
     </div>
 
   </nav>
 
 
-
-  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
 
   <main>
 
 
-
-    <!-- HOME / HERO -->
+    <!-- =======================================================
+         HOME / HERO
+    ======================================================== -->
 
     <section id="home" class="hero" data-section-name="HOME">
 
-      <video class="hero-video" autoplay muted loop playsinline>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
         <source src="imagem/videobateria-v2.mp4" type="video/mp4">
       </video>
 
+
       <div class="hero-index">
-
         01 / EKBALLO SOUNDS
-
       </div>
+
 
       <div class="hero-scatter">
 
@@ -270,6 +223,7 @@
         </span>
 
       </div>
+
 
       <h1 class="hero-title">
 
@@ -293,6 +247,7 @@
 
       </h1>
 
+
       <div class="hero-sub" data-parallax="0.12">
 
         <p>
@@ -305,7 +260,9 @@
     </section>
 
 
-    <!-- MARQUEE -->
+    <!-- =======================================================
+         MARQUEE
+    ======================================================== -->
 
     <div class="marquee">
 
@@ -330,51 +287,33 @@
 
         </div>
 
-        <div class="marquee-content">
-
-          <span>EKBALLO SOUNDS</span>
-          <span class="dot">●</span>
-
-          <span>FÉ</span>
-          <span class="dot">●</span>
-
-          <span>ADORAÇÃO</span>
-          <span class="dot">●</span>
-
-          <span>ROCK</span>
-          <span class="dot">●</span>
-
-          <span>GOSPEL</span>
-          <span class="dot">●</span>
-
-        </div>
-
       </div>
 
     </div>
 
 
-    <!-- SOBRE -->
+    <!-- =======================================================
+         SOBRE
+    ======================================================== -->
 
     <section id="sobre" class="about" data-section-name="SOBRE">
 
-
       <span class="section-eyebrow">
-
         02 / SOBRE A EK
-
       </span>
 
 
       <h2 class="about-title">
+
         Afinal, quem é a
-        <em>Ekballo Sounds<sup>®</sup>?</em>
+        <em>
+          Ekballo Sounds<sup>®</sup>?
+        </em>
+
       </h2>
 
 
-
       <div class="about-body">
-
 
         <p class="about-lead">
 
@@ -384,7 +323,6 @@
           contemporânea para a música cristã.
 
         </p>
-
 
 
         <p class="about-text">
@@ -398,7 +336,6 @@
           apresentações.
 
         </p>
-
 
 
         <p class="about-text">
@@ -418,7 +355,6 @@
         </p>
 
 
-
         <p class="about-text">
 
           Com letras que abordam temas como
@@ -427,7 +363,6 @@
           profundos de louvor e conexão com Deus.
 
         </p>
-
 
 
         <p class="about-text">
@@ -443,99 +378,172 @@
       </div>
 
 
-
       <div class="about-coords">
 
-        <span>
-          FORMED: 2023
-        </span>
+        <span>FORMED: 2023</span>
 
-        <span>
-          MEMBERS: 05
-        </span>
+        <span>MEMBERS: 05</span>
 
-        <span>
-          GENRE: GOSPEL / ROCK
-        </span>
+        <span>GENRE: GOSPEL / ROCK</span>
 
-        <span>
-          LOCATION: PR / BR
-        </span>
+        <span>LOCATION: PR / BR</span>
 
       </div>
 
     </section>
 
 
+    <!-- =======================================================
+         REDES SOCIAIS
+    ======================================================== -->
 
-    <!-- LOJA -->
+    <section id="redes-sociais" class="stats" data-section-name="REDES">
 
-    <section id="loja" class="store" data-section-name="LOJA">
+      <span class="section-eyebrow">
+        04 / CONECTE-SE
+      </span>
 
 
-      <div class="section-head">
+      <div class="stats-grid">
 
 
-        <div>
+        <!-- INSTAGRAM -->
 
-          <span class="section-eyebrow">
+        <div class="stat">
 
-            03 / LOJA OFICIAL
+          <a class="stat-number" href="https://www.instagram.com/ekballo.sounds" target="_blank"
+            rel="noopener noreferrer" data-hover>
+            EK
+          </a>
 
+          <span class="stat-label">
+            INSTAGRAM
           </span>
-
-
-          <h2 class="section-title">
-
-            Nossa Loja
-
-          </h2>
 
         </div>
 
 
+        <!-- YOUTUBE -->
+
+        <div class="stat">
+
+          <a class="stat-number" href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank"
+            rel="noopener noreferrer" data-hover>
+            BA
+          </a>
+
+          <span class="stat-label">
+            YOUTUBE
+          </span>
+
+        </div>
+
+
+        <!-- SPOTIFY -->
+
+        <div class="stat">
+
+          <a class="stat-number" href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank"
+            rel="noopener noreferrer" data-hover>
+            LLO
+          </a>
+
+          <span class="stat-label">
+            SPOTIFY
+          </span>
+
+        </div>
+
+
+        <!-- CONVITE -->
+
+        <div class="stat">
+
+          <div class="stat-logo">
+
+            <img src="imagem/icone ek.png" alt="Ekballo Sounds">
+
+          </div>
+
+          <span class="stat-label">
+            &nbsp;
+          </span>
+
+          <a href="#convite" class="contact-link" data-hover>
+
+            <span class="contact-link-label">
+              →
+            </span>
+
+            <span class="contact-link-value">
+              Convide a EK
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         LOJA
+    ======================================================== -->
+
+    <section id="loja" class="store" data-section-name="LOJA">
+
+      <div class="section-head">
+
+        <div>
+
+          <span class="section-eyebrow">
+            05 / LOJA OFICIAL
+          </span>
+
+          <h2 class="section-title">
+            Nossa Loja
+          </h2>
+
+        </div>
+
         <p class="section-note">
-
           A MENSAGEM QUE A GENTE CANTA
-
         </p>
 
       </div>
 
 
-
       <div class="store-grid" data-hover-project>
-
 
         <div class="store-video-wrap">
 
-          <video class="store-video" autoplay muted loop playsinline>
+          <video class="store-video" autoplay muted loop playsinline preload="metadata">
+
             <source src="imagem/camisajesus-v2.mp4" type="video/mp4">
+
           </video>
 
           <span class="store-video-tag">
-
             LOJA / EK
-
           </span>
 
         </div>
 
 
-
         <div class="store-info">
 
-
           <span class="project-number">
-
             01
-
           </span>
 
 
           <h2 class="about-title-titulo">
+
             VISTA ESSA
             <em>MENSAGEM!</em>
+
           </h2>
 
 
@@ -577,7 +585,7 @@
           </ul>
 
 
-          <a href="#contato" class="project-cta store-cta" data-hover>
+          <a href="#camisetas" class="project-cta store-cta" data-hover>
 
             SAIBA MAIS
 
@@ -589,131 +597,114 @@
 
         </div>
 
-
       </div>
 
     </section>
 
 
-    <!-- REDES SOCIAIS -->
+    <!-- =======================================================
+         CATÁLOGO
+    ======================================================== -->
 
-    <section id="redes-sociais" class="stats" data-section-name="REDES">
+    <section id="camisetas" class="products" data-section-name="CAMISETAS">
 
-      <span class="section-eyebrow">
-        04 / CONECTE-SE
-      </span>
+      <div class="product-bg" data-product-bg>
 
-      <div class="stats-grid">
+        <video class="product-bg-video is-active" data-bg-video="0" autoplay muted loop playsinline preload="auto">
 
-        <!-- INSTAGRAM -->
+          <source src="imagem/backgroud01.mp4" type="video/mp4">
 
-        <div class="stat">
+        </video>
 
-          <span class="stat-number">
-            EK
+
+        <video class="product-bg-video" data-bg-video="1" autoplay muted loop playsinline preload="auto">
+
+          <source src="imagem/backgroudPQ.mp4" type="video/mp4">
+
+        </video>
+
+
+        <video class="product-bg-video" data-bg-video="2" autoplay muted loop playsinline preload="auto">
+
+          <source src="imagem/backgroudEK.mp4" type="video/mp4">
+
+        </video>
+
+      </div>
+
+
+      <div class="section-head">
+
+        <div>
+
+          <span class="section-eyebrow">
+            06 / CATÁLOGO
           </span>
 
-          <span class="stat-label">
-            INSTAGRAM
-          </span>
-
-          <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer"
-            class="contact-link">
-
-            <span class="contact-link-label">
-              @
-            </span>
-
-            <span class="contact-link-value">
-              Instagram
-            </span>
-
-          </a>
+          <h2 class="section-title">
+            Camisetas
+          </h2>
 
         </div>
 
 
-        <!-- YOUTUBE -->
+        <p class="section-note">
+          ESCOLHA SEU MODELO
+        </p>
 
-        <div class="stat">
+      </div>
 
-          <span class="stat-number">
-            BA
+
+      <div class="product-stage" data-product-stage>
+
+        <div class="product-visual">
+
+          <img src="imagem/camisa-1.png" alt="Camiseta Porque Ele É Digno" data-product-image class="png-image">
+
+          <span class="product-tag" data-product-tag>
+            T-SHIRT
           </span>
-
-          <span class="stat-label">
-            YOUTUBE
-          </span>
-
-          <a href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank" rel="noopener noreferrer"
-            class="contact-link">
-
-            <span class="contact-link-label">
-              →
-            </span>
-
-            <span class="contact-link-value">
-              YouTube
-            </span>
-
-          </a>
 
         </div>
 
 
-        <!-- SPOTIFY -->
+        <div class="product-info">
 
-        <div class="stat">
+          <h3 class="product-title">
 
-          <span class="stat-number">
-            LLO
-          </span>
-
-          <span class="stat-label">
-            SPOTIFY
-          </span>
-
-          <a href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank"
-            rel="noopener noreferrer" class="contact-link">
-
-            <span class="contact-link-label">
-              →
+            <span data-product-title-top>
+              PORQUE ELE
             </span>
 
-            <span class="contact-link-value">
-              Spotify
-            </span>
+            <em data-product-title-bottom>
+              É DIGNO
+            </em>
 
-          </a>
-
-        </div>
+          </h3>
 
 
-        <!-- CONVITE -->
+          <div class="product-lines" data-product-lines>
 
-        <div class="stat">
+            <p>
+              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
+            </p>
 
-          <div class="stat-logo">
+            <p>
+              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
+            </p>
 
-            <img src="imagem/icone ek.png" alt="Ekballo Sounds">
+            <p>
+              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
+            </p>
+
+            <p>
+              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
+            </p>
 
           </div>
 
-          <span class="stat-label">
 
-          </span>
-
-          <a href="#convite" class="contact-link">
-
-            <span class="contact-link-label">
-              →
-            </span>
-
-            <span class="contact-link-value">
-              Convide a EK
-            </span>
-
-          </a>
+          <div class="product-controls" data-product-controls></div>
 
         </div>
 
@@ -721,25 +712,27 @@
 
     </section>
 
-    <!-- CONVITE -->
+
+    <!-- =======================================================
+         CONVITE
+    ======================================================== -->
 
     <section id="convite" class="about" data-section-name="CONVITE">
 
-
       <span class="section-eyebrow">
-
-        05 / CONVITE A EK
-
+        07 / CONVITE A EK
       </span>
 
 
       <h2 class="about-title-titulo">
+
         Leve a EK para
         <em>seu evento.</em>
+
       </h2>
 
-      <div class="about-body">
 
+      <div class="about-body">
 
         <p class="about-lead">
 
@@ -762,7 +755,6 @@
       </div>
 
 
-
       <form id="formulario-convite" action="https://api.web3forms.com/submit" method="POST">
 
         <input type="hidden" name="access_key" value="208b37c2-5e24-473a-8c20-1f2c827efe77">
@@ -771,30 +763,40 @@
 
         <input type="hidden" name="from_name" value="Site Ekballo Sounds">
 
+
         <div class="campo-formulario">
 
-          <label for="nome">Nome</label>
+          <label for="nome">
+            Nome
+          </label>
 
-          <input type="text" id="nome" name="name" placeholder="Digite seu nome" required>
+          <input type="text" id="nome" name="name" placeholder="Digite seu nome" autocomplete="name" required>
 
         </div>
 
+
         <div class="campo-formulario">
 
-          <label for="email">Email</label>
+          <label for="email">
+            Email
+          </label>
 
-          <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+          <input type="email" id="email" name="email" placeholder="Digite seu email" autocomplete="email" required>
 
         </div>
 
+
         <div class="campo-formulario">
 
-          <label for="mensagem">Mensagem</label>
+          <label for="mensagem">
+            Mensagem
+          </label>
 
           <textarea id="mensagem" name="message" rows="5" placeholder="Conte um pouco sobre seu evento"
             required></textarea>
 
         </div>
+
 
         <button type="submit" id="botao-enviar" data-hover>
           ENVIAR
@@ -805,16 +807,14 @@
     </section>
 
 
-
-    <!-- CONTATO -->
+    <!-- =======================================================
+         CONTATO
+    ======================================================== -->
 
     <section id="contato" class="contact" data-section-name="CONTATO">
 
-
       <span class="section-eyebrow">
-
-        06 / CONTATO
-
+        08 / CONTATO
       </span>
 
 
@@ -826,65 +826,44 @@
       </h2>
 
 
-
       <div class="contact-links">
 
 
         <a href="mailto:agendaekballo@gmail.com" class="contact-link" data-hover>
 
-
           <span class="contact-link-label">
-
             EMAIL
-
           </span>
 
-
           <span class="contact-link-value">
-
             agendaekballo@gmail.com
-
           </span>
 
         </a>
-
 
 
         <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer"
           class="contact-link" data-hover>
 
-
           <span class="contact-link-label">
-
             INSTAGRAM
-
           </span>
 
-
           <span class="contact-link-value">
-
             @ekballo.sounds
-
           </span>
 
         </a>
 
 
-
         <a href="#convite" class="contact-link" data-hover>
 
-
           <span class="contact-link-label">
-
             EVENTOS
-
           </span>
 
-
           <span class="contact-link-value">
-
             Convide a Ekballo
-
           </span>
 
         </a>
@@ -896,51 +875,39 @@
   </main>
 
 
-
-  <!-- FOOTER -->
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
 
   <footer class="site-footer">
 
-
     <span class="footer-brand">
-
       EKBALLO SOUNDS<sup>®</sup>
-
     </span>
 
 
     <span>
-
-      © <span data-year>2026</span>
+      ©
+      <span data-year>2026</span>
       EkballoSounds.
       Todos os direitos reservados.
-
     </span>
 
 
     <div class="footer-social">
 
-
       <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer" data-hover>
-
         Instagram
-
       </a>
-
 
       <a href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank" rel="noopener noreferrer"
         data-hover>
-
         YouTube
-
       </a>
-
 
       <a href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank" rel="noopener noreferrer"
         data-hover>
-
         Spotify
-
       </a>
 
     </div>
@@ -948,19 +915,17 @@
   </footer>
 
 
+  <!-- =========================================================
+       GSAP
+  ========================================================== -->
 
-  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
 
-
-  <!-- JAVASCRIPT -->
-
+  <!-- JS -->
   <script src="EKBALLO.JS"></script>
-
 
 </body>
 
