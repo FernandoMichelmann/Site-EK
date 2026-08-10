@@ -3,928 +3,428 @@
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description" content="Ekballo Sounds — Worship, Rock e Gospel. Música, fé e propósito.">
+  <icon-link rel="icon" type="image/png" href="imagem/iconeek.png"></icon-link>
 
-  <icon rel="icon" type="image/png" href="imagem/iconeek.png"></icon>
+  <!-- Ícone da Aba (Favicon) -->
+  <link rel="icon" type="image/png" href="imagem/iconeek.png">
 
   <title>Ekballo Sounds®</title>
 
-  <!-- Google Fonts -->
+  <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Folha de Estilos Principal -->
   <link rel="stylesheet" href="EKBALLO.CSS">
 </head>
 
 <body>
 
-  <!-- =========================================================
-       GRAIN / TEXTURA
-  ========================================================== -->
-
+  <!--1. GRAIN / TEXTURA DE FUNDO-->
   <div class="grain" aria-hidden="true"></div>
 
 
-  <!-- =========================================================
-       CURSOR PERSONALIZADO
-  ========================================================== -->
-
+  <!--2. CURSOR PERSONALIZADO-->
   <div class="cursor-ring" data-cursor-ring aria-hidden="true">
     <img src="imagem/iconeek.png" alt="">
   </div>
 
 
-  <!-- =========================================================
-       HUD
-  ========================================================== -->
-
+  <!-- 3. HUD (INFORMAÇÕES DE TELA / TEMPO / POSIÇÃO)-->
   <aside class="hud" aria-hidden="true">
-
     <div class="hud-row">
       <span class="hud-key">TIME</span>
-
-      <span class="hud-val" data-hud-time>
-        --:--:--
-      </span>
+      <span class="hud-val" data-hud-time>--:--:--</span>
     </div>
 
     <div class="hud-row">
       <span class="hud-key">POS</span>
-
-      <span class="hud-val" data-hud-pos>
-        X0000 Y0000
-      </span>
+      <span class="hud-val" data-hud-pos>X0000 Y0000</span>
     </div>
 
     <div class="hud-row">
       <span class="hud-key">SCROLL</span>
-
-      <span class="hud-val" data-hud-scroll>
-        000%
-      </span>
+      <span class="hud-val" data-hud-scroll>000%</span>
     </div>
 
     <div class="hud-row">
       <span class="hud-key">SECTION</span>
-
-      <span class="hud-val" data-hud-section>
-        01 / HOME
-      </span>
+      <span class="hud-val" data-hud-section>01 / HOME</span>
     </div>
-
   </aside>
 
 
-  <!-- =========================================================
-       HEADER
-  ========================================================== -->
-
+  <!-- 4. CABEÇALHO DA PÁGINA (HEADER)-->
   <header class="site-header">
-
+    <!-- Logotipo -->
     <a href="#home" class="logo" data-hover aria-label="Ekballo Sounds - Início">
-
       <img src="imagem/iconeek.png" alt="Ekballo Sounds">
-
       <span>EKBALLO</span>
-
-      <span class="logo-mark">
-        SOUNDS®
-      </span>
-
+      <span class="logo-mark">SOUNDS®</span>
     </a>
 
-
-    <!-- MENU DESKTOP -->
-
+    <!-- Menu Principal (Desktop) -->
     <nav class="main-nav" aria-label="Menu principal">
-
-      <a href="#home" data-hover>
-        Início
-      </a>
-
-      <a href="#sobre" data-hover>
-        Sobre
-      </a>
-
-      <a href="#loja" data-hover>
-        Loja
-      </a>
-
-      <a href="#redes-sociais" data-hover>
-        Redes
-      </a>
-
-      <a href="#convite" data-hover>
-        Convide a EK
-      </a>
-
-      <a href="#contato" data-hover>
-        Contato
-      </a>
-
+      <a href="#home" data-hover>Início</a>
+      <a href="#sobre" data-hover>Sobre</a>
+      <a href="#loja" data-hover>Loja</a>
+      <a href="#redes-sociais" data-hover>Redes</a>
+      <a href="#convite" data-hover>Convide a EK</a>
+      <a href="#contato" data-hover>Contato</a>
     </nav>
 
-
-    <!-- MENU MOBILE -->
-
+    <!-- Botão do Menu Mobile -->
     <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation"
       aria-label="Abrir menu">
       <span></span>
       <span></span>
     </button>
-
   </header>
 
 
-  <!-- =========================================================
-       MENU MOBILE
-  ========================================================== -->
-
+  <!-- 5. MENU MOBILE (OVERLAY) -->
   <nav id="mobile-navigation" class="mobile-nav" data-mobile-nav aria-hidden="true" aria-label="Menu mobile">
-
-    <a href="#home" data-mobile-link>
-      Início
-    </a>
-
-    <a href="#sobre" data-mobile-link>
-      Sobre
-    </a>
-
-    <a href="#loja" data-mobile-link>
-      Loja
-    </a>
-
-    <a href="#redes-sociais" data-mobile-link>
-      Redes Sociais
-    </a>
-
-    <a href="#convite" data-mobile-link>
-      Convide a EK
-    </a>
-
-    <a href="#contato" data-mobile-link>
-      Contato
-    </a>
+    <a href="#home" data-mobile-link>Início</a>
+    <a href="#sobre" data-mobile-link>Sobre</a>
+    <a href="#loja" data-mobile-link>Loja</a>
+    <a href="#redes-sociais" data-mobile-link>Redes Sociais</a>
+    <a href="#convite" data-mobile-link>Convide a EK</a>
+    <a href="#contato" data-mobile-link>Contato</a>
 
     <div class="mobile-nav-foot">
       EKBALLO SOUNDS — 2026
     </div>
-
   </nav>
 
 
-  <!-- =========================================================
-       MAIN
-  ========================================================== -->
-
+  <!-- CONTEÚDO PRINCIPAL (MAIN) -->
   <main>
 
-
-    <!-- =======================================================
-         HOME / HERO
-    ======================================================== -->
-
+    <!-- SEÇÃO: HOME / HERO -->
     <section id="home" class="hero" data-section-name="HOME">
-
       <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
         <source src="imagem/videobateria-v2.mp4" type="video/mp4">
       </video>
-
 
       <div class="hero-index">
         01 / EKBALLO SOUNDS
       </div>
 
-
       <div class="hero-scatter">
-
-        <span class="scatter-item tag-a" data-parallax="0.3">
-          WORSHIP / ROCK / GOSPEL
-        </span>
-
-        <span class="scatter-item tag-b" data-parallax="0.15">
-          FÉ + MÚSICA + PROPÓSITO
-        </span>
-
-        <span class="scatter-item tag-c" data-parallax="0.25">
-          CURITIBA / PR
-        </span>
-
-        <span class="scatter-item tag-d">
-          ↓ SCROLL PARA CONHECER
-        </span>
-
+        <span class="scatter-item tag-a" data-parallax="0.3">WORSHIP / ROCK / GOSPEL</span>
+        <span class="scatter-item tag-b" data-parallax="0.15">FÉ + MÚSICA + PROPÓSITO</span>
+        <span class="scatter-item tag-c" data-parallax="0.25">CURITIBA / PR</span>
+        <span class="scatter-item tag-d">↓ SCROLL PARA CONHECER</span>
       </div>
-
 
       <h1 class="hero-title">
-
-        <span class="line">
-          <span class="reveal">
-            EK
-          </span>
-        </span>
-
-        <span class="line">
-          <span class="reveal">
-            BA
-          </span>
-        </span>
-
-        <span class="line accent">
-          <span class="reveal">
-            LLO<sup>®</sup>
-          </span>
-        </span>
-
+        <span class="line"><span class="reveal">EK</span></span>
+        <span class="line"><span class="reveal">BA</span></span>
+        <span class="line accent"><span class="reveal">LLO<sup>®</sup></span></span>
       </h1>
 
-
       <div class="hero-sub" data-parallax="0.12">
-
-        <p>
-          Uma banda que acredita que
-          <em>música também é missão.</em>
-        </p>
-
+        <p>Uma banda que acredita que <em>música também é missão.</em></p>
       </div>
-
     </section>
 
 
-    <!-- =======================================================
-         MARQUEE
-    ======================================================== -->
-
+    <!-- SEÇÃO: FAIXA MARQUEE -->
     <div class="marquee">
-
       <div class="marquee-track">
-
         <div class="marquee-content">
-
           <span>EKBALLO SOUNDS</span>
           <span class="dot">●</span>
-
           <span>FÉ</span>
           <span class="dot">●</span>
-
           <span>ADORAÇÃO</span>
           <span class="dot">●</span>
-
           <span>ROCK</span>
           <span class="dot">●</span>
-
           <span>GOSPEL</span>
           <span class="dot">●</span>
-
         </div>
-
       </div>
-
     </div>
 
 
-    <!-- =======================================================
-         SOBRE
-    ======================================================== -->
-
+    <!-- SEÇÃO: SOBRE -->
     <section id="sobre" class="about" data-section-name="SOBRE">
-
-      <span class="section-eyebrow">
-        02 / SOBRE A EK
-      </span>
-
+      <span class="section-eyebrow">02 / SOBRE A EK</span>
 
       <h2 class="about-title">
-
-        Afinal, quem é a
-        <em>
-          Ekballo Sounds<sup>®</sup>?
-        </em>
-
+        Afinal, quem é a <em>Ekballo Sounds<sup>®</sup>?</em>
       </h2>
 
-
       <div class="about-body">
-
         <p class="about-lead">
-
-          A Ekballo Sounds é uma banda gospel
-          formada em 2023, com cinco integrantes
-          e uma proposta de levar uma sonoridade
-          contemporânea para a música cristã.
-
+          A Ekballo Sounds é uma banda gospel formada em 2023, com cinco integrantes e uma proposta de levar uma
+          sonoridade contemporânea para a música cristã.
         </p>
 
-
         <p class="about-text">
-
-          A banda mistura elementos do
-          <span class="hl">
-            pop, rock e outros estilos contemporâneos
-          </span>,
-          criando uma identidade musical própria
-          e uma experiência intensa durante suas
-          apresentações.
-
+          A banda mistura elementos do <span class="hl">pop, rock e outros estilos contemporâneos</span>, criando uma
+          identidade musical própria e uma experiência intensa durante suas apresentações.
         </p>
 
-
         <p class="about-text">
-
-          O nome
-          <span class="hl-mono">
-            "EKBALLO"
-          </span>
-          vem do grego e significa
-          "lançar" ou "enviar".
-
-          Esse significado representa a missão
-          da banda de espalhar uma mensagem de
-          fé, esperança e transformação através
-          da música.
-
+          O nome <span class="hl-mono">"EKBALLO"</span> vem do grego e significa "lançar" ou "enviar". Esse significado
+          representa a missão da banda de espalhar uma mensagem de fé, esperança e transformação através da música.
         </p>
 
-
         <p class="about-text">
-
-          Com letras que abordam temas como
-          adoração, amor e renovação espiritual,
-          a Ekballo Sounds busca criar momentos
+          Com letras que abordam temas como adoração, amor e renovação espiritual, a Ekballo Sounds busca criar momentos
           profundos de louvor e conexão com Deus.
-
         </p>
-
 
         <p class="about-text">
-
-          A energia das apresentações é parte
-          fundamental da identidade da banda,
-          unindo música, emoção e uma mensagem
-          cristã que busca alcançar pessoas
-          dentro e fora da igreja.
-
+          A energia das apresentações é parte fundamental da identidade da banda, unindo música, emoção e uma mensagem
+          cristã que busca alcançar pessoas dentro e fora da igreja.
         </p>
-
       </div>
-
 
       <div class="about-coords">
-
         <span>FORMED: 2023</span>
-
         <span>MEMBERS: 05</span>
-
         <span>GENRE: GOSPEL / ROCK</span>
-
         <span>LOCATION: PR / BR</span>
-
       </div>
-
     </section>
 
 
-    <!-- =======================================================
-         REDES SOCIAIS
-    ======================================================== -->
-
+    <!-- SEÇÃO: REDES SOCIAIS -->
     <section id="redes-sociais" class="stats" data-section-name="REDES">
-
-      <span class="section-eyebrow">
-        04 / CONECTE-SE
-      </span>
-
+      <span class="section-eyebrow">04 / CONECTE-SE</span>
 
       <div class="stats-grid">
-
-
-        <!-- INSTAGRAM -->
-
+        <!-- Instagram -->
         <div class="stat">
-
           <a class="stat-number" href="https://www.instagram.com/ekballo.sounds" target="_blank"
-            rel="noopener noreferrer" data-hover>
-            EK
-          </a>
-
-          <span class="stat-label">
-            INSTAGRAM
-          </span>
-
+            rel="noopener noreferrer" data-hover>EK</a>
+          <span class="stat-label">INSTAGRAM</span>
         </div>
 
-
-        <!-- YOUTUBE -->
-
+        <!-- YouTube -->
         <div class="stat">
-
           <a class="stat-number" href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank"
-            rel="noopener noreferrer" data-hover>
-            BA
-          </a>
-
-          <span class="stat-label">
-            YOUTUBE
-          </span>
-
+            rel="noopener noreferrer" data-hover>BA</a>
+          <span class="stat-label">YOUTUBE</span>
         </div>
 
-
-        <!-- SPOTIFY -->
-
+        <!-- Spotify -->
         <div class="stat">
-
           <a class="stat-number" href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank"
-            rel="noopener noreferrer" data-hover>
-            LLO
-          </a>
-
-          <span class="stat-label">
-            SPOTIFY
-          </span>
-
+            rel="noopener noreferrer" data-hover>LLO</a>
+          <span class="stat-label">SPOTIFY</span>
         </div>
 
-
-        <!-- CONVITE -->
-
+        <!-- Convite Direct -->
         <div class="stat">
-
           <div class="stat-logo">
-
             <img src="imagem/iconeek.png" alt="Ekballo Sounds">
-
           </div>
-
-          <span class="stat-label">
-            &nbsp;
-          </span>
-
+          <span class="stat-label">&nbsp;</span>
           <a href="#convite" class="contact-link" data-hover>
-
-            <span class="contact-link-label">
-              →
-            </span>
-
-            <span class="contact-link-value">
-              Convide a EK
-            </span>
-
+            <span class="contact-link-label">→</span>
+            <span class="contact-link-value">Convide a EK</span>
           </a>
-
         </div>
-
       </div>
-
     </section>
 
 
-    <!-- =======================================================
-         LOJA
-    ======================================================== -->
-
+    <!-- SEÇÃO: LOJA OFICIAL -->
     <section id="loja" class="store" data-section-name="LOJA">
-
       <div class="section-head">
-
         <div>
-
-          <span class="section-eyebrow">
-            05 / LOJA OFICIAL
-          </span>
-
-          <h2 class="section-title">
-            Nossa Loja
-          </h2>
-
+          <span class="section-eyebrow">05 / LOJA OFICIAL</span>
+          <h2 class="section-title">Nossa Loja</h2>
         </div>
-
-        <p class="section-note">
-          A MENSAGEM QUE A GENTE CANTA
-        </p>
-
+        <p class="section-note">A MENSAGEM QUE A GENTE CANTA</p>
       </div>
-
 
       <div class="store-grid" data-hover-project>
-
         <div class="store-video-wrap">
-
           <video class="store-video" autoplay muted loop playsinline preload="metadata">
-
             <source src="imagem/camisajesus-v2.mp4" type="video/mp4">
-
           </video>
-
-          <span class="store-video-tag">
-            LOJA / EK
-          </span>
-
+          <span class="store-video-tag">LOJA / EK</span>
         </div>
-
 
         <div class="store-info">
-
-          <span class="project-number">
-            01
-          </span>
-
-
-          <h2 class="about-title-titulo">
-
-            VISTA ESSA
-            <em>MENSAGEM!</em>
-
-          </h2>
-
+          <span class="project-number">01</span>
+          <h2 class="about-title-titulo">VISTA ESSA <em>MENSAGEM!</em></h2>
 
           <p class="store-lead">
-
-            Camisetas, moletons e itens
-            exclusivos criados pela Ekballo
-            Sounds para quem também acredita
-            que música é missão.
-
+            Camisetas, moletons e itens exclusivos criados pela Ekballo Sounds para quem também acredita que música é
+            missão.
           </p>
-
 
           <p class="store-text">
-
-            Cada peça carrega um pouco da
-            nossa história e do que a gente
-            vive em cada apresentação — feita
-            para quem quer levar essa mensagem
-            para além do palco.
-
+            Cada peça carrega um pouco da nossa história e do que a gente vive em cada apresentação — feita para quem
+            quer levar essa mensagem para além do palco.
           </p>
 
-
           <ul class="store-list">
-
-            <li>
-              PRODUÇÃO LIMITADA
-            </li>
-
-            <li>
-              ENVIO PARA TODO O BRASIL
-            </li>
-
-            <li>
-              RENDA REVERTIDA PARA A BANDA
-            </li>
-
+            <li>PRODUÇÃO LIMITADA</li>
+            <li>ENVIO PARA TODO O BRASIL</li>
+            <li>RENDA REVERTIDA PARA A BANDA</li>
           </ul>
 
-
           <a href="#camisetas" class="project-cta store-cta" data-hover>
-
-            SAIBA MAIS
-
-            <span class="arrow">
-              →
-            </span>
-
+            SAIBA MAIS <span class="arrow">→</span>
           </a>
-
         </div>
-
       </div>
-
     </section>
 
 
-    <!-- =======================================================
-         CATÁLOGO
-    ======================================================== -->
-
+    <!-- SEÇÃO: CATÁLOGO / CAMISETAS -->
     <section id="camisetas" class="products" data-section-name="CAMISETAS">
-
+      <!-- Vídeos de Fundo em Camadas -->
       <div class="product-bg" data-product-bg>
-
         <video class="product-bg-video is-active" data-bg-video="0" autoplay muted loop playsinline preload="auto">
-
           <source src="imagem/backgroud01.mp4" type="video/mp4">
-
         </video>
-
-
         <video class="product-bg-video" data-bg-video="1" autoplay muted loop playsinline preload="auto">
-
           <source src="imagem/backgroudPQ.mp4" type="video/mp4">
-
         </video>
-
-
         <video class="product-bg-video" data-bg-video="2" autoplay muted loop playsinline preload="auto">
-
           <source src="imagem/backgroudEK.mp4" type="video/mp4">
-
         </video>
-
       </div>
-
 
       <div class="section-head">
-
         <div>
-
-          <span class="section-eyebrow">
-            06 / CATÁLOGO
-          </span>
-
-          <h2 class="section-title">
-            Camisetas
-          </h2>
-
+          <span class="section-eyebrow">06 / CATÁLOGO</span>
+          <h2 class="section-title">Camisetas</h2>
         </div>
-
-
-        <p class="section-note">
-          ESCOLHA SEU MODELO
-        </p>
-
+        <p class="section-note">ESCOLHA SEU MODELO</p>
       </div>
-
 
       <div class="product-stage" data-product-stage>
-
         <div class="product-visual">
-
           <img src="imagem/camisa-1.png" alt="Camiseta Porque Ele É Digno" data-product-image class="png-image">
-
-          <span class="product-tag" data-product-tag>
-            T-SHIRT
-          </span>
-
+          <span class="product-tag" data-product-tag>T-SHIRT</span>
         </div>
-
 
         <div class="product-info">
-
           <h3 class="product-title">
-
-            <span data-product-title-top>
-              PORQUE ELE
-            </span>
-
-            <em data-product-title-bottom>
-              É DIGNO
-            </em>
-
+            <span data-product-title-top>PORQUE ELE</span>
+            <em data-product-title-bottom>É DIGNO</em>
           </h3>
 
-
           <div class="product-lines" data-product-lines>
-
-            <p>
-              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
-            </p>
-
-            <p>
-              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
-            </p>
-
-            <p>
-              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
-            </p>
-
-            <p>
-              PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"
-            </p>
-
+            <p>PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"</p>
+            <p>PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"</p>
+            <p>PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"</p>
+            <p>PORQUE ELE É DIGNO, É UMA MÚSICA DA EKBALLO DO EP "A ELE"</p>
           </div>
 
-
           <div class="product-controls" data-product-controls></div>
-
         </div>
-
       </div>
-
     </section>
 
 
-    <!-- =======================================================
-         CONVITE
-    ======================================================== -->
-
+    <!-- SEÇÃO: CONVITE -->
     <section id="convite" class="about" data-section-name="CONVITE">
-
-      <span class="section-eyebrow">
-        07 / CONVITE A EK
-      </span>
-
+      <span class="section-eyebrow">07 / CONVITE A EK</span>
 
       <h2 class="about-title-titulo">
-
-        Leve a EK para
-        <em>seu evento.</em>
-
+        Leve a EK para <em>seu evento.</em>
       </h2>
 
-
       <div class="about-body">
-
-        <p class="about-lead">
-
-          Quer levar a Ekballo Sounds
-          para o seu evento?
-
-        </p>
-
-
+        <p class="about-lead">Quer levar a Ekballo Sounds para o seu evento?</p>
         <p class="about-text">
-
-          Preencha o formulário abaixo
-          e entre em contato conosco.
-
-          Conte um pouco sobre seu evento,
-          sua cidade e o que você está planejando.
-
+          Preencha o formulário abaixo e entre em contato conosco. Conte um pouco sobre seu evento, sua cidade e o que
+          você está planejando.
         </p>
-
       </div>
 
-
+      <!-- Formulário Web3Forms -->
       <form id="formulario-convite" action="https://api.web3forms.com/submit" method="POST">
-
         <input type="hidden" name="access_key" value="208b37c2-5e24-473a-8c20-1f2c827efe77">
-
         <input type="hidden" name="subject" value="Novo convite para a Ekballo Sounds">
-
         <input type="hidden" name="from_name" value="Site Ekballo Sounds">
 
-
         <div class="campo-formulario">
-
-          <label for="nome">
-            Nome
-          </label>
-
+          <label for="nome">Nome</label>
           <input type="text" id="nome" name="name" placeholder="Digite seu nome" autocomplete="name" required>
-
         </div>
 
-
         <div class="campo-formulario">
-
-          <label for="email">
-            Email
-          </label>
-
+          <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Digite seu email" autocomplete="email" required>
-
         </div>
 
-
         <div class="campo-formulario">
-
-          <label for="mensagem">
-            Mensagem
-          </label>
-
+          <label for="mensagem">Mensagem</label>
           <textarea id="mensagem" name="message" rows="5" placeholder="Conte um pouco sobre seu evento"
             required></textarea>
-
         </div>
 
-
-        <button type="submit" id="botao-enviar" data-hover>
-          ENVIAR
-        </button>
-
+        <button type="submit" id="botao-enviar" data-hover>ENVIAR</button>
       </form>
-
     </section>
 
 
-    <!-- =======================================================
-         CONTATO
-    ======================================================== -->
-
+    <!-- SEÇÃO: CONTATO -->
     <section id="contato" class="contact" data-section-name="CONTATO">
+      <span class="section-eyebrow">08 / CONTATO</span>
 
-      <span class="section-eyebrow">
-        08 / CONTATO
-      </span>
-
-
-      <h2 class="contact-title">
-
-        Fale com
-        <em>a EK.</em>
-
-      </h2>
-
+      <h2 class="contact-title">Fale com <em>a EK.</em></h2>
 
       <div class="contact-links">
-
-
         <a href="mailto:agendaekballo@gmail.com" class="contact-link" data-hover>
-
-          <span class="contact-link-label">
-            EMAIL
-          </span>
-
-          <span class="contact-link-value">
-            agendaekballo@gmail.com
-          </span>
-
+          <span class="contact-link-label">EMAIL</span>
+          <span class="contact-link-value">agendaekballo@gmail.com</span>
         </a>
-
 
         <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer"
           class="contact-link" data-hover>
-
-          <span class="contact-link-label">
-            INSTAGRAM
-          </span>
-
-          <span class="contact-link-value">
-            @ekballo.sounds
-          </span>
-
+          <span class="contact-link-label">INSTAGRAM</span>
+          <span class="contact-link-value">@ekballo.sounds</span>
         </a>
-
 
         <a href="#convite" class="contact-link" data-hover>
-
-          <span class="contact-link-label">
-            EVENTOS
-          </span>
-
-          <span class="contact-link-value">
-            Convide a Ekballo
-          </span>
-
+          <span class="contact-link-label">EVENTOS</span>
+          <span class="contact-link-value">Convide a Ekballo</span>
         </a>
-
       </div>
-
     </section>
 
   </main>
 
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
+  <!-- RODAPÉ (FOOTER) -->
   <footer class="site-footer">
+    <span class="footer-brand">EKBALLO SOUNDS<sup>®</sup></span>
 
-    <span class="footer-brand">
-      EKBALLO SOUNDS<sup>®</sup>
-    </span>
-
-
-    <span>
-      ©
-      <span data-year>2026</span>
-      EkballoSounds.
-      Todos os direitos reservados.
-    </span>
-
+    <span>© <span data-year>2026</span> EkballoSounds. Todos os direitos reservados.</span>
 
     <div class="footer-social">
-
-      <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer" data-hover>
-        Instagram
-      </a>
-
+      <a href="https://www.instagram.com/ekballo.sounds" target="_blank" rel="noopener noreferrer"
+        data-hover>Instagram</a>
       <a href="https://www.youtube.com/channel/UCzKWluDNaeI4xS171-TqjrQ" target="_blank" rel="noopener noreferrer"
-        data-hover>
-        YouTube
-      </a>
-
+        data-hover>YouTube</a>
       <a href="https://open.spotify.com/intl-pt/artist/1Bv6BT1z6FR6Jm9iu2azw7" target="_blank" rel="noopener noreferrer"
-        data-hover>
-        Spotify
-      </a>
-
+        data-hover>Spotify</a>
     </div>
-
   </footer>
 
 
-  <!-- =========================================================
-       GSAP
-  ========================================================== -->
-
+  <!-- BIBLIOTECA DE ANIMAÇÃO (GSAP + SCROLLTRIGGER) -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-
-  <!-- JS -->
+  <!-- Lógica JavaScript Principal -->
   <script src="EKBALLO.JS"></script>
 
 </body>
