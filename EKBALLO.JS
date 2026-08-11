@@ -166,6 +166,389 @@
     });
   }
 
+  /* GALERIA / MOMENTOS DA EK */
+
+  const galleryStage = document.querySelector("[data-gallery-stage]");
+  const galleryPrev = document.querySelector("[data-gallery-prev]");
+  const galleryNext = document.querySelector("[data-gallery-next]");
+  const galleryCounter = document.querySelector("[data-gallery-counter]");
+
+  if (galleryStage) {
+
+    /*
+     * MANUTENÇÃO DA GALERIA
+     */
+
+    const galleryImages = [
+      "imagem/bolsonaro.jpeg",
+      "imagem/bolsonaro.jpeg",
+      "imagem/bolsonaro.jpeg",
+      "imagem/bolsonaro.jpeg",
+      "imagem/bolsonaro.jpeg",
+    ];
+
+    /*
+     * TEMPO DA TROCA AUTOMÁTICA
+     */
+
+    const galleryAutoPlayTime = 3000;
+
+    let currentGalleryIndex = 0;
+    let galleryAnimating = false;
+
+    /*
+     * CONTROLE DO HOVER
+     *
+     * Quando o mouse estiver sobre a imagem principal,
+     * a troca automática fica pausada.
+     */
+
+    let galleryPaused = false;
+
+    /*
+     * ESTILO DAS SETAS
+     *
+     * Aumentamos diretamente pelo JavaScript.
+     */
+
+    [galleryPrev, galleryNext].forEach((button) => {
+
+      if (!button) return;
+
+      button.style.width = "64px";
+      button.style.height = "64px";
+      button.style.fontSize = "32px";
+      button.style.display = "flex";
+      button.style.alignItems = "center";
+      button.style.justifyContent = "center";
+      button.style.cursor = "pointer";
+    });
+
+    /*
+     * Descobre automaticamente a posição de cada foto.
+     */
+
+    const getGalleryPosition = (index) => {
+
+      const total = galleryImages.length;
+
+      if (total === 0) {
+        return "hidden";
+      }
+
+      if (total === 1) {
+        return index === 0 ? "center" : "hidden";
+      }
+
+      const prevIndex =
+        (currentGalleryIndex - 1 + total) % total;
+
+      const nextIndex =
+        (currentGalleryIndex + 1) % total;
+
+      if (index === currentGalleryIndex) {
+        return "center";
+      }
+
+      if (index === prevIndex) {
+        return "prev";
+      }
+
+      if (index === nextIndex) {
+        return "next";
+      }
+
+      return "hidden";
+    };
+
+    /*
+     * Cria todas as imagens.
+     */
+
+    const createGallery = () => {
+
+      galleryStage.replaceChildren();
+
+      galleryImages.forEach((imagePath, index) => {
+
+        const figure = document.createElement("figure");
+
+        figure.className = "gallery-item";
+
+        const image = document.createElement("img");
+
+        image.src = imagePath;
+        image.alt = `Momento da Ekballo Sounds ${index + 1}`;
+        image.loading = index === 0 ? "eager" : "lazy";
+        image.draggable = false;
+
+        /*
+         * ANIMAÇÃO DE ZOOM
+         */
+
+        image.style.transition =
+          "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
+
+        image.style.transformOrigin = "center center";
+
+        figure.appendChild(image);
+
+        galleryStage.appendChild(figure);
+      });
+
+      renderGallery();
+      setupGalleryHover();
+    };
+
+    /*
+     * Atualiza posições, contador e classes.
+     */
+
+    const renderGallery = () => {
+
+      const items =
+        galleryStage.querySelectorAll(".gallery-item");
+
+      items.forEach((item, index) => {
+
+        const position = getGalleryPosition(index);
+
+        item.classList.remove(
+          "is-center",
+          "is-prev",
+          "is-next",
+          "is-hidden"
+        );
+
+        item.classList.add(`is-${position}`);
+
+        const image = item.querySelector("img");
+
+        if (!image) return;
+
+        /*
+         * A imagem principal começa normal.
+         */
+
+        if (position === "center") {
+
+          image.style.transform = "scale(1)";
+
+        } else {
+
+          image.style.transform = "scale(1)";
+        }
+      });
+
+      if (galleryCounter) {
+
+        const current =
+          String(currentGalleryIndex + 1).padStart(2, "0");
+
+        const total =
+          String(galleryImages.length).padStart(2, "0");
+
+        galleryCounter.innerHTML =
+          `<span class="gallery-counter-current">${current}</span>` +
+          `<span class="gallery-counter-sep">/</span>` +
+          `<span class="gallery-counter-total">${total}</span>`;
+      }
+
+      /*
+       * Depois de mudar a imagem,
+       * reaplica o controle de hover.
+       */
+
+      setupGalleryHover();
+    };
+
+    /*
+     * ZOOM + PAUSA NO HOVER
+     */
+
+    const setupGalleryHover = () => {
+
+      const items =
+        galleryStage.querySelectorAll(".gallery-item");
+
+      items.forEach((item) => {
+
+        const image = item.querySelector("img");
+
+        if (!image) return;
+
+        /*
+         * Evita adicionar os eventos várias vezes.
+         */
+
+        if (item.dataset.hoverReady === "true") return;
+
+        item.dataset.hoverReady = "true";
+
+        item.addEventListener("mouseenter", () => {
+
+          /*
+           * Só pausa se for a imagem principal.
+           */
+
+          if (!item.classList.contains("is-center")) {
+            return;
+          }
+
+          galleryPaused = true;
+
+          /*
+           * Aproxima a imagem suavemente.
+           */
+
+          image.style.transform = "scale(1.08)";
+        });
+
+        item.addEventListener("mouseleave", () => {
+
+          /*
+           * Só altera a imagem principal.
+           */
+
+          if (!item.classList.contains("is-center")) {
+            return;
+          }
+
+          galleryPaused = false;
+
+          /*
+           * Volta suavemente ao tamanho normal.
+           */
+
+          image.style.transform = "scale(1)";
+        });
+      });
+    };
+
+    /*
+     * Muda a foto.
+     */
+
+    const changeGalleryImage = (direction) => {
+
+      /*
+       * Não troca enquanto o mouse estiver
+       * sobre a imagem principal.
+       */
+
+      if (galleryPaused) {
+        return;
+      }
+
+      if (
+        galleryAnimating ||
+        galleryImages.length <= 1
+      ) {
+        return;
+      }
+
+      galleryAnimating = true;
+
+      currentGalleryIndex =
+        (currentGalleryIndex + direction + galleryImages.length)
+        % galleryImages.length;
+
+      renderGallery();
+
+      const animationDuration =
+        prefersReducedMotion ? 0 : 700;
+
+      window.setTimeout(() => {
+
+        galleryAnimating = false;
+
+      }, animationDuration);
+    };
+
+    /*
+     * Botão anterior.
+     */
+
+    if (galleryPrev) {
+
+      galleryPrev.addEventListener("click", () => {
+
+        changeGalleryImage(-1);
+
+      });
+    }
+
+    /*
+     * Botão próximo.
+     */
+
+    if (galleryNext) {
+
+      galleryNext.addEventListener("click", () => {
+
+        changeGalleryImage(1);
+
+      });
+    }
+
+    /*
+     * Controle pelo teclado.
+     */
+
+    document.addEventListener("keydown", (event) => {
+
+      const gallery =
+        document.querySelector(".gallery");
+
+      if (!gallery) return;
+
+      const rect =
+        gallery.getBoundingClientRect();
+
+      const galleryVisible =
+        rect.top < window.innerHeight &&
+        rect.bottom > 0;
+
+      if (!galleryVisible) return;
+
+      if (event.key === "ArrowLeft") {
+
+        changeGalleryImage(-1);
+
+      }
+
+      if (event.key === "ArrowRight") {
+
+        changeGalleryImage(1);
+
+      }
+    });
+
+    /*
+     * Inicializa a galeria.
+     */
+
+    createGallery();
+
+    /*
+     * TROCA AUTOMÁTICA
+     */
+
+    if (galleryImages.length > 1) {
+
+      window.setInterval(() => {
+
+        /*
+         * A própria função verifica
+         * se o mouse está sobre a imagem.
+         */
+
+        changeGalleryImage(1);
+
+      }, galleryAutoPlayTime);
+    }
+  }
+
   /* CATÁLOGO DE CAMISETAS */
   const productStage = document.querySelector("[data-product-stage]");
 
