@@ -7,42 +7,25 @@
 }
 
 :root {
-  /* Cores de Fundo */
   --bg: #000000;
   --bg-raise: #131312;
-
-  /* Tipografia */
   --ink: #f4f2ec;
   --ink-dim: #a7a49c;
   --muted: #6f6d67;
-
-  /* Estrutura */
   --wire: #2a2a27;
-
-  /* Destaques */
   --flare: #06b98d;
   --flare-dim: #7a2313;
   --flare-rgb: 6, 185, 141;
-
-  /* Produtos */
   --product-1: #06b98d;
   --product-2: #d2b567;
   --product-3: #077dd0;
-
-  /* Estados */
   --stat-hover: #06b98d;
   --mono-accent: #8f8c84;
-
-  /* Fontes */
   --f-display: "monument", "Archivo Black", "Arial Black", sans-serif;
   --f-ui: "Space Grotesk", sans-serif;
   --f-mono: "JetBrains Mono", monospace;
   --f-serif: "Instrument Serif", serif;
-
-  /* Espaçamento */
   --gutter: clamp(1.25rem, 4vw, 3rem);
-
-  /* Transições */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-soft: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -691,7 +674,7 @@ section[id] {
   color: var(--muted);
 }
 
-/*GALERIA / MOMENTOS DA EK */
+/* GALERIA / MOMENTOS DA EK */
 
 .gallery {
   position: relative;
@@ -700,11 +683,7 @@ section[id] {
   overflow: hidden;
 }
 
-.gallery .section-title em {
-  font-style: normal;
-  color: var(--flare);
-}
-
+.gallery .section-title em,
 .gallery .section-eyebrow em {
   font-style: normal;
   color: var(--flare);
@@ -719,8 +698,6 @@ section[id] {
   margin-top: 2rem;
 }
 
-/* Área onde as três fotos ficam posicionadas */
-
 .gallery-stage {
   position: relative;
   width: min(100%, 900px);
@@ -730,9 +707,8 @@ section[id] {
   justify-content: center;
   perspective: 1400px;
   transform-style: preserve-3d;
+  isolation: isolate;
 }
-
-/* Cada foto */
 
 .gallery-item {
   position: absolute;
@@ -745,16 +721,15 @@ section[id] {
   background: var(--bg-raise);
   border: 1px solid var(--wire);
   transform-origin: center center;
+  isolation: isolate;
+  will-change: transform, opacity, filter;
   transition:
     transform 0.7s var(--ease-out),
     opacity 0.7s var(--ease-out),
     filter 0.7s var(--ease-out),
-    z-index 0s linear 0.35s,
+    z-index 0s linear,
     border-color 0.5s var(--ease-out);
-  will-change: transform, opacity, filter;
 }
-
-/* Imagem */
 
 .gallery-item img {
   width: 100%;
@@ -765,96 +740,96 @@ section[id] {
   pointer-events: none;
 }
 
-/* FOTO PRINCIPAL */
-
 .gallery-item.is-center {
-  z-index: 3;
-  opacity: 1;
-  filter: none;
-  transform:
-    translate(-50%, -50%) scale(1);
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transform: translate(-50%, -50%) scale(1);
   border-color: var(--flare);
-  background: #000;
-  isolation: isolate;
+  background: #000 !important;
+  overflow: hidden;
+  mix-blend-mode: normal !important;
   box-shadow:
     0 0 0 1px rgba(var(--flare-rgb), 0.35),
     0 30px 70px rgba(0, 0, 0, 0.65);
 }
 
 .gallery-item.is-center img {
-  opacity: 1;
-  filter: none;
-  display: block;
   position: relative;
-  z-index: 1;
+  z-index: 10000 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  background: #000 !important;
+  transition: transform 0.8s var(--ease-out);
 }
 
-/* FOTO DA ESQUERDA */
+.gallery-item.is-center:hover {
+  transform: translate(-50%, -50%) scale(1.035);
+}
+
+.gallery-item.is-center:hover img {
+  transform: scale(1.04);
+}
 
 .gallery-item.is-prev {
-  z-index: 2;
+  z-index: 1 !important;
   opacity: 0.9;
   filter: brightness(0.45) saturate(0.9);
   transform-origin: right center;
-  transform:
-    translate(calc(-50% - 330px), -50%) rotateY(34deg) scale(0.8);
+  transform: translate(calc(-50% - 330px), -50%) rotateY(34deg) scale(0.8);
   border-color: rgba(var(--flare-rgb), 0.35);
 }
 
-/* FOTO DA DIREITA */
-
 .gallery-item.is-next {
-  z-index: 2;
+  z-index: 1 !important;
   opacity: 0.9;
   filter: brightness(0.45) saturate(0.9);
   transform-origin: left center;
-  transform:
-    translate(calc(-50% + 330px), -50%) rotateY(-34deg) scale(0.8);
+  transform: translate(calc(-50% + 330px), -50%) rotateY(-34deg) scale(0.8);
   border-color: rgba(var(--flare-rgb), 0.35);
 }
 
-/* Fotos que não estão visíveis */
-
 .gallery-item.is-hidden {
-  z-index: 1;
-  opacity: 0;
+  z-index: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden;
   filter: blur(8px);
-  transform:
-    translate(-50%, -50%) scale(0.55);
+  transform: translate(-50%, -50%) scale(0.55);
   pointer-events: none;
+  transition:
+    transform 0.7s var(--ease-out),
+    opacity 0.7s var(--ease-out),
+    filter 0.7s var(--ease-out),
+    visibility 0s linear 0.7s;
 }
 
-/*SETAS*/
+/* SETAS DA GALERIA */
 
 .gallery-arrow {
   position: absolute;
   top: 50%;
   z-index: 10001;
-
   width: 72px;
   height: 72px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 1px solid rgba(var(--flare-rgb), 0.45);
   border-radius: 50%;
-
   background: rgba(0, 0, 0, 0.3);
-
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-
   color: var(--flare);
-
   font-family: var(--f-mono);
   font-size: 1.6rem;
-
   opacity: 0.9;
-
   transform: translateY(-50%);
-
   transition:
     color 0.3s var(--ease-out),
     border-color 0.3s var(--ease-out),
@@ -872,43 +847,32 @@ section[id] {
   right: 0;
 }
 
-/* Hover das setas */
-
 .gallery-arrow:hover,
 .gallery-arrow:focus-visible {
   color: var(--flare);
   border-color: var(--flare);
   background: rgba(var(--flare-rgb), 0.1);
   opacity: 1;
-
   box-shadow:
     0 0 0 1px rgba(var(--flare-rgb), 0.4),
     0 8px 25px rgba(var(--flare-rgb), 0.25);
-
-  transform:
-    translateY(calc(-50% - 3px)) scale(1.08);
+  transform: translateY(calc(-50% - 3px)) scale(1.08);
 }
-
-/* Clique */
 
 .gallery-arrow:active {
-  transform:
-    translateY(-50%) scale(0.98);
+  transform: translateY(-50%) scale(0.98);
 }
 
-/*RODAPÉ DA GALERIA */
+/* RODAPÉ DA GALERIA */
 
 .gallery-footer {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-top: 1rem;
   padding-top: 1.2rem;
-
   border-top: 1px solid var(--wire);
-
   font-family: var(--f-mono);
   font-size: 0.7rem;
   letter-spacing: 0.08em;
@@ -939,124 +903,6 @@ section[id] {
 .gallery-counter-sep,
 .gallery-counter-total {
   color: var(--muted);
-}
-
-/*RESPONSIVIDADE */
-
-@media (max-width: 900px) {
-
-  .gallery-stage {
-    aspect-ratio: 1 / 0.8;
-  }
-
-  .gallery-item {
-    width: min(55vw, 460px);
-  }
-
-  .gallery-item.is-prev {
-    transform:
-      translate(calc(-50% - 220px), -50%) rotateY(34deg) scale(0.72);
-  }
-
-  .gallery-item.is-next {
-    transform:
-      translate(calc(-50% + 220px), -50%) rotateY(-34deg) scale(0.72);
-  }
-
-  .gallery-arrow-prev {
-    left: 0.5rem;
-  }
-
-  .gallery-arrow-next {
-    right: 0.5rem;
-  }
-}
-
-@media (max-width: 700px) {
-
-  .gallery {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
-  .gallery-wrapper {
-    min-height: 440px;
-  }
-
-  .gallery-stage {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-  }
-
-  .gallery-item {
-    width: min(72vw, 380px);
-  }
-
-  .gallery-item.is-prev {
-    transform:
-      translate(calc(-50% - 120px), -50%) rotateY(30deg) scale(0.7);
-  }
-
-  .gallery-item.is-next {
-    transform:
-      translate(calc(-50% + 120px), -50%) rotateY(-30deg) scale(0.7);
-  }
-
-  .gallery-arrow {
-    width: 58px;
-    height: 58px;
-    font-size: 1.2rem;
-  }
-
-  .gallery-arrow-prev {
-    left: 0;
-  }
-
-  .gallery-arrow-next {
-    right: 0;
-  }
-
-  .gallery-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-
-  .gallery-counter {
-    position: static;
-    transform: none;
-    align-self: center;
-  }
-
-  .gallery-caption-right {
-    text-align: left;
-  }
-}
-
-@media (max-width: 500px) {
-
-  .gallery-wrapper {
-    min-height: 380px;
-  }
-
-  .gallery-item {
-    width: 68vw;
-  }
-
-  .gallery-item.is-prev {
-    transform:
-      translate(calc(-50% - 85px), -50%) rotateY(28deg) scale(0.65);
-  }
-
-  .gallery-item.is-next {
-    transform:
-      translate(calc(-50% + 85px), -50%) rotateY(-28deg) scale(0.65);
-  }
-
-  .gallery-arrow {
-    width: 42px;
-    height: 42px;
-  }
 }
 
 /* STATS / REDES */
@@ -1523,6 +1369,75 @@ section[id] {
   transform: translateY(0);
 }
 
+/* BOTÃO COMPRAR AGORA */
+
+.product-buy-row {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.25rem;
+}
+
+.product-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.9rem 2.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(13, 13, 12, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ink);
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color 0.35s var(--ease-out),
+    background 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
+    transform 0.35s var(--ease-out);
+}
+
+.product-buy-btn:hover,
+.product-buy-btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+/* PORQUE ELE É DIGNO — DOURADO */
+
+.product-buy-btn[data-color="2"]:hover,
+.product-buy-btn[data-color="2"]:focus-visible {
+  border-color: var(--product-2);
+  background: color-mix(in srgb, var(--product-2) 10%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--product-2) 40%, transparent),
+    0 0 24px color-mix(in srgb, var(--product-2) 55%, transparent),
+    0 0 48px color-mix(in srgb, var(--product-2) 22%, transparent);
+}
+
+/* EKBALLO — AZUL */
+
+.product-buy-btn[data-color="3"]:hover,
+.product-buy-btn[data-color="3"]:focus-visible {
+  border-color: var(--product-3);
+  background: color-mix(in srgb, var(--product-3) 10%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--product-3) 40%, transparent),
+    0 0 24px color-mix(in srgb, var(--product-3) 55%, transparent),
+    0 0 48px color-mix(in srgb, var(--product-3) 22%, transparent);
+}
+
+.product-buy-btn:active {
+  transform: translateY(0);
+}
+
 /* CONTATO */
 
 .contact {
@@ -1627,6 +1542,52 @@ section[id] {
 
 /* RESPONSIVIDADE */
 
+@media (max-width: 900px) {
+  .gallery-stage {
+    aspect-ratio: 1 / 0.8;
+  }
+
+  .gallery-item {
+    width: min(55vw, 460px);
+  }
+
+  .gallery-item.is-prev {
+    transform: translate(calc(-50% - 220px), -50%) rotateY(34deg) scale(0.72);
+  }
+
+  .gallery-item.is-next {
+    transform: translate(calc(-50% + 220px), -50%) rotateY(-34deg) scale(0.72);
+  }
+
+  .gallery-arrow-prev {
+    left: 0.5rem;
+  }
+
+  .gallery-arrow-next {
+    right: 0.5rem;
+  }
+
+  #sobre .about-body {
+    grid-template-columns: 1fr;
+  }
+
+  #sobre .about-photo-left,
+  #sobre .about-lead,
+  #sobre .about-photo-right {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #sobre .about-photo-left {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  #sobre .about-photo-right {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 @media (max-width: 860px) {
 
   .store-grid,
@@ -1667,6 +1628,68 @@ section[id] {
   }
 }
 
+@media (max-width: 700px) {
+  .gallery {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .gallery-wrapper {
+    min-height: 440px;
+  }
+
+  .gallery-stage {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .gallery-item {
+    width: min(72vw, 380px);
+  }
+
+  .gallery-item.is-prev {
+    transform: translate(calc(-50% - 120px), -50%) rotateY(30deg) scale(0.7);
+  }
+
+  .gallery-item.is-next {
+    transform: translate(calc(-50% + 120px), -50%) rotateY(-30deg) scale(0.7);
+  }
+
+  .gallery-arrow {
+    width: 58px;
+    height: 58px;
+    font-size: 1.2rem;
+  }
+
+  .gallery-arrow-prev {
+    left: 0;
+  }
+
+  .gallery-arrow-next {
+    right: 0;
+  }
+
+  .gallery-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .gallery-counter {
+    position: static;
+    transform: none;
+    align-self: center;
+  }
+
+  .gallery-caption-right {
+    text-align: left;
+  }
+
+  .hud {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .hero {
     padding-top: 7rem;
@@ -1702,6 +1725,39 @@ section[id] {
     padding: 0.8rem 1.6rem;
     font-size: 0.72rem;
   }
+
+  .product-buy-row {
+    margin-top: 0;
+  }
+
+  .product-buy-btn {
+    min-height: 44px;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery-wrapper {
+    min-height: 380px;
+  }
+
+  .gallery-item {
+    width: 68vw;
+  }
+
+  .gallery-item.is-prev {
+    transform: translate(calc(-50% - 85px), -50%) rotateY(28deg) scale(0.65);
+  }
+
+  .gallery-item.is-next {
+    transform: translate(calc(-50% + 85px), -50%) rotateY(-28deg) scale(0.65);
+  }
+
+  .gallery-arrow {
+    width: 42px;
+    height: 42px;
+  }
 }
 
 /* ACESSIBILIDADE */
@@ -1712,6 +1768,11 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--flare);
   outline-offset: 3px;
+}
+
+.product-buy-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1730,100 +1791,124 @@ textarea:focus-visible {
   }
 }
 
-/* GALERIA — CENTRAL OPACA + TRANSIÇÃO SUAVE */
+/* SOBRE — FOTOS */
 
-.gallery-stage {
-  isolation: isolate;
+#sobre .about-body {
+  grid-template-columns: 1.1fr 1fr 1fr;
+  max-width: none;
+  margin-left: 0;
+  align-items: start;
 }
 
-.gallery-item {
-  isolation: isolate;
-  will-change: transform, opacity, filter;
-  transition:
-    transform 0.7s var(--ease-out),
-    opacity 0.7s var(--ease-out),
-    filter 0.7s var(--ease-out),
-    z-index 0s linear 0s,
-    border-color 0.5s var(--ease-out);
-}
-
-/* IMAGEM CENTRAL */
-.gallery-item.is-center {
-  z-index: 9999 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  filter: none !important;
-  background: #000000 !important;
-  isolation: isolate;
+#sobre .about-photo {
+  margin: 0;
   overflow: hidden;
-  mix-blend-mode: normal !important;
-
-  transform:
-    translate(-50%, -50%) scale(1);
-
-  transition:
-    transform 0.7s var(--ease-out),
-    opacity 0.7s var(--ease-out),
-    filter 0.7s var(--ease-out),
-    border-color 0.5s var(--ease-out);
+  background: var(--bg-raise);
+  border: 1px solid var(--wire);
 }
 
-/* IMAGEM CENTRAL */
-.gallery-item.is-center img {
+#sobre .about-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+#sobre .about-photo-left {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  align-self: stretch;
+  min-height: 420px;
+}
+
+#sobre .about-lead {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#sobre .about-photo-right {
+  grid-column: 3;
+  grid-row: 1;
+  aspect-ratio: 16 / 7;
+}
+
+/* BOTÃO COMPRAR AGORA — AJUSTE FINAL */
+
+.product-controls .product-buy-row {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.25rem;
+}
+
+.product-controls .product-buy-btn {
   position: relative;
-  z-index: 10000 !important;
-
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-
-  opacity: 1 !important;
-  visibility: visible !important;
-  filter: none !important;
-  mix-blend-mode: normal !important;
-
-  background: #000000 !important;
-}
-
-/* IMAGENS LATERAIS */
-.gallery-item.is-prev,
-.gallery-item.is-next {
-  z-index: 1 !important;
-  opacity: 0.9;
-}
-
-/* IMAGENS OCULTAS */
-.gallery-item.is-hidden {
-  z-index: 0 !important;
-  opacity: 0 !important;
-  visibility: hidden;
-
-  filter: blur(8px);
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.9rem 2.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(13, 13, 12, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ink);
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
   transition:
-    transform 0.7s var(--ease-out),
-    opacity 0.7s var(--ease-out),
-    filter 0.7s var(--ease-out),
-    visibility 0s linear 0.7s;
+    border-color 0.35s var(--ease-out),
+    background 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
+    transform 0.35s var(--ease-out);
 }
 
-.gallery-item.is-center {
-  transition:
-    transform 0.7s var(--ease-out),
-    opacity 0.7s var(--ease-out),
-    filter 0.7s var(--ease-out),
-    border-color 0.5s var(--ease-out);
+.product-controls .product-buy-btn:hover,
+.product-controls .product-buy-btn:focus-visible {
+  transform: translateY(-2px);
 }
 
-.gallery-item.is-center:hover {
-  transform:
-    translate(-50%, -50%) scale(1.035);
+/* BOTÃO DA CAMISETA PORQUE ELE É DIGNO — DOURADO */
+
+.product-controls .product-buy-btn[data-color="2"]:hover,
+.product-controls .product-buy-btn[data-color="2"]:focus-visible {
+  border-color: var(--product-2);
+  background: color-mix(in srgb, var(--product-2) 10%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--product-2) 40%, transparent),
+    0 0 24px color-mix(in srgb, var(--product-2) 55%, transparent),
+    0 0 48px color-mix(in srgb, var(--product-2) 22%, transparent);
 }
 
-.gallery-item.is-center:hover img {
-  transform: scale(1.04);
+/* BOTÃO DA CAMISETA EKBALLO — AZUL */
+
+.product-controls .product-buy-btn[data-color="3"]:hover,
+.product-controls .product-buy-btn[data-color="3"]:focus-visible {
+  border-color: var(--product-3);
+  background: color-mix(in srgb, var(--product-3) 10%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--product-3) 40%, transparent),
+    0 0 24px color-mix(in srgb, var(--product-3) 55%, transparent),
+    0 0 48px color-mix(in srgb, var(--product-3) 22%, transparent);
 }
 
-.gallery-item.is-center img {
-  transition: transform 0.8s var(--ease-out);
+.product-controls .product-buy-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .product-controls .product-buy-row {
+    margin-top: 0;
+  }
+
+  .product-controls .product-buy-btn {
+    min-height: 44px;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.72rem;
+  }
 }

@@ -1,3 +1,4 @@
+
 (() => {
   "use strict";
 
@@ -34,23 +35,28 @@
 
     animateCursor();
 
-    // Eventos corrigidos com e.target / e.relatedTarget para evitar falsos "mouseout"
     document.addEventListener("pointerover", (event) => {
-      const targetHover = event.target.closest("[data-hover]");
-      const targetProject = event.target.closest("[data-hover-project]");
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const targetHover = target.closest("[data-hover]");
+      const targetProject = target.closest("[data-hover-project]");
 
       if (targetHover) cursorRing.classList.add("is-active");
       if (targetProject) cursorRing.classList.add("is-project");
     });
 
     document.addEventListener("pointerout", (event) => {
-      const targetHover = event.target.closest("[data-hover]");
-      const targetProject = event.target.closest("[data-hover-project]");
+      const target = event.target;
+      if (!(target instanceof Element)) return;
 
-      // Garante que o cursor só perde a classe se sair do elemento completamente
+      const targetHover = target.closest("[data-hover]");
+      const targetProject = target.closest("[data-hover-project]");
+
       if (targetHover && !targetHover.contains(event.relatedTarget)) {
         cursorRing.classList.remove("is-active");
       }
+
       if (targetProject && !targetProject.contains(event.relatedTarget)) {
         cursorRing.classList.remove("is-project");
       }
@@ -88,7 +94,9 @@
   const updateScrollHud = () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const percentage = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+    const percentage = docHeight > 0
+      ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100))
+      : 0;
 
     if (hudScroll) {
       hudScroll.textContent = `${String(Math.round(percentage)).padStart(3, "0")}%`;
@@ -167,52 +175,27 @@
   }
 
   /* GALERIA / MOMENTOS DA EK */
-
   const galleryStage = document.querySelector("[data-gallery-stage]");
   const galleryPrev = document.querySelector("[data-gallery-prev]");
   const galleryNext = document.querySelector("[data-gallery-next]");
   const galleryCounter = document.querySelector("[data-gallery-counter]");
 
   if (galleryStage) {
-
-    /*
-     * MANUTENÇÃO DA GALERIA
-     */
-
     const galleryImages = [
       "imagem/bolsonaro.jpeg",
       "imagem/bolsonaro.jpeg",
       "imagem/bolsonaro.jpeg",
       "imagem/bolsonaro.jpeg",
-      "imagem/bolsonaro.jpeg",
+      "imagem/bolsonaro.jpeg"
     ];
-
-    /*
-     * TEMPO DA TROCA AUTOMÁTICA
-     */
 
     const galleryAutoPlayTime = 3000;
 
     let currentGalleryIndex = 0;
     let galleryAnimating = false;
-
-    /*
-     * CONTROLE DO HOVER
-     *
-     * Quando o mouse estiver sobre a imagem principal,
-     * a troca automática fica pausada.
-     */
-
     let galleryPaused = false;
 
-    /*
-     * ESTILO DAS SETAS
-     *
-     * Aumentamos diretamente pelo JavaScript.
-     */
-
     [galleryPrev, galleryNext].forEach((button) => {
-
       if (!button) return;
 
       button.style.width = "64px";
@@ -224,129 +207,63 @@
       button.style.cursor = "pointer";
     });
 
-    /*
-     * Descobre automaticamente a posição de cada foto.
-     */
-
     const getGalleryPosition = (index) => {
-
       const total = galleryImages.length;
 
-      if (total === 0) {
-        return "hidden";
-      }
+      if (total === 0) return "hidden";
+      if (total === 1) return index === 0 ? "center" : "hidden";
 
-      if (total === 1) {
-        return index === 0 ? "center" : "hidden";
-      }
+      const prevIndex = (currentGalleryIndex - 1 + total) % total;
+      const nextIndex = (currentGalleryIndex + 1) % total;
 
-      const prevIndex =
-        (currentGalleryIndex - 1 + total) % total;
-
-      const nextIndex =
-        (currentGalleryIndex + 1) % total;
-
-      if (index === currentGalleryIndex) {
-        return "center";
-      }
-
-      if (index === prevIndex) {
-        return "prev";
-      }
-
-      if (index === nextIndex) {
-        return "next";
-      }
+      if (index === currentGalleryIndex) return "center";
+      if (index === prevIndex) return "prev";
+      if (index === nextIndex) return "next";
 
       return "hidden";
     };
 
-    /*
-     * Cria todas as imagens.
-     */
+    const setupGalleryHover = () => {
+      const items = galleryStage.querySelectorAll(".gallery-item");
 
-    const createGallery = () => {
+      items.forEach((item) => {
+        const image = item.querySelector("img");
+        if (!image || item.dataset.hoverReady === "true") return;
 
-      galleryStage.replaceChildren();
+        item.dataset.hoverReady = "true";
 
-      galleryImages.forEach((imagePath, index) => {
+        item.addEventListener("mouseenter", () => {
+          if (!item.classList.contains("is-center")) return;
 
-        const figure = document.createElement("figure");
+          galleryPaused = true;
+          image.style.transform = "scale(1.08)";
+        });
 
-        figure.className = "gallery-item";
+        item.addEventListener("mouseleave", () => {
+          if (!item.classList.contains("is-center")) return;
 
-        const image = document.createElement("img");
-
-        image.src = imagePath;
-        image.alt = `Momento da Ekballo Sounds ${index + 1}`;
-        image.loading = index === 0 ? "eager" : "lazy";
-        image.draggable = false;
-
-        /*
-         * ANIMAÇÃO DE ZOOM
-         */
-
-        image.style.transition =
-          "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
-
-        image.style.transformOrigin = "center center";
-
-        figure.appendChild(image);
-
-        galleryStage.appendChild(figure);
+          galleryPaused = false;
+          image.style.transform = "scale(1)";
+        });
       });
-
-      renderGallery();
-      setupGalleryHover();
     };
 
-    /*
-     * Atualiza posições, contador e classes.
-     */
-
     const renderGallery = () => {
-
-      const items =
-        galleryStage.querySelectorAll(".gallery-item");
+      const items = galleryStage.querySelectorAll(".gallery-item");
 
       items.forEach((item, index) => {
-
         const position = getGalleryPosition(index);
 
-        item.classList.remove(
-          "is-center",
-          "is-prev",
-          "is-next",
-          "is-hidden"
-        );
-
+        item.classList.remove("is-center", "is-prev", "is-next", "is-hidden");
         item.classList.add(`is-${position}`);
 
         const image = item.querySelector("img");
-
-        if (!image) return;
-
-        /*
-         * A imagem principal começa normal.
-         */
-
-        if (position === "center") {
-
-          image.style.transform = "scale(1)";
-
-        } else {
-
-          image.style.transform = "scale(1)";
-        }
+        if (image) image.style.transform = "scale(1)";
       });
 
       if (galleryCounter) {
-
-        const current =
-          String(currentGalleryIndex + 1).padStart(2, "0");
-
-        const total =
-          String(galleryImages.length).padStart(2, "0");
+        const current = String(currentGalleryIndex + 1).padStart(2, "0");
+        const total = String(galleryImages.length).padStart(2, "0");
 
         galleryCounter.innerHTML =
           `<span class="gallery-counter-current">${current}</span>` +
@@ -354,198 +271,71 @@
           `<span class="gallery-counter-total">${total}</span>`;
       }
 
-      /*
-       * Depois de mudar a imagem,
-       * reaplica o controle de hover.
-       */
-
       setupGalleryHover();
     };
 
-    /*
-     * ZOOM + PAUSA NO HOVER
-     */
+    const createGallery = () => {
+      galleryStage.replaceChildren();
 
-    const setupGalleryHover = () => {
+      galleryImages.forEach((imagePath, index) => {
+        const figure = document.createElement("figure");
+        figure.className = "gallery-item";
 
-      const items =
-        galleryStage.querySelectorAll(".gallery-item");
+        const image = document.createElement("img");
+        image.src = imagePath;
+        image.alt = `Momento da Ekballo Sounds ${index + 1}`;
+        image.loading = index === 0 ? "eager" : "lazy";
+        image.draggable = false;
+        image.style.transition = "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
+        image.style.transformOrigin = "center center";
 
-      items.forEach((item) => {
-
-        const image = item.querySelector("img");
-
-        if (!image) return;
-
-        /*
-         * Evita adicionar os eventos várias vezes.
-         */
-
-        if (item.dataset.hoverReady === "true") return;
-
-        item.dataset.hoverReady = "true";
-
-        item.addEventListener("mouseenter", () => {
-
-          /*
-           * Só pausa se for a imagem principal.
-           */
-
-          if (!item.classList.contains("is-center")) {
-            return;
-          }
-
-          galleryPaused = true;
-
-          /*
-           * Aproxima a imagem suavemente.
-           */
-
-          image.style.transform = "scale(1.08)";
-        });
-
-        item.addEventListener("mouseleave", () => {
-
-          /*
-           * Só altera a imagem principal.
-           */
-
-          if (!item.classList.contains("is-center")) {
-            return;
-          }
-
-          galleryPaused = false;
-
-          /*
-           * Volta suavemente ao tamanho normal.
-           */
-
-          image.style.transform = "scale(1)";
-        });
+        figure.appendChild(image);
+        galleryStage.appendChild(figure);
       });
+
+      renderGallery();
     };
 
-    /*
-     * Muda a foto.
-     */
-
     const changeGalleryImage = (direction) => {
-
-      /*
-       * Não troca enquanto o mouse estiver
-       * sobre a imagem principal.
-       */
-
-      if (galleryPaused) {
-        return;
-      }
-
-      if (
-        galleryAnimating ||
-        galleryImages.length <= 1
-      ) {
-        return;
-      }
+      if (galleryPaused || galleryAnimating || galleryImages.length <= 1) return;
 
       galleryAnimating = true;
 
       currentGalleryIndex =
-        (currentGalleryIndex + direction + galleryImages.length)
-        % galleryImages.length;
+        (currentGalleryIndex + direction + galleryImages.length) % galleryImages.length;
 
       renderGallery();
 
-      const animationDuration =
-        prefersReducedMotion ? 0 : 700;
-
       window.setTimeout(() => {
-
         galleryAnimating = false;
-
-      }, animationDuration);
+      }, prefersReducedMotion ? 0 : 700);
     };
 
-    /*
-     * Botão anterior.
-     */
-
     if (galleryPrev) {
-
-      galleryPrev.addEventListener("click", () => {
-
-        changeGalleryImage(-1);
-
-      });
+      galleryPrev.addEventListener("click", () => changeGalleryImage(-1));
     }
-
-    /*
-     * Botão próximo.
-     */
 
     if (galleryNext) {
-
-      galleryNext.addEventListener("click", () => {
-
-        changeGalleryImage(1);
-
-      });
+      galleryNext.addEventListener("click", () => changeGalleryImage(1));
     }
 
-    /*
-     * Controle pelo teclado.
-     */
-
     document.addEventListener("keydown", (event) => {
-
-      const gallery =
-        document.querySelector(".gallery");
-
+      const gallery = document.querySelector(".gallery");
       if (!gallery) return;
 
-      const rect =
-        gallery.getBoundingClientRect();
-
-      const galleryVisible =
-        rect.top < window.innerHeight &&
-        rect.bottom > 0;
+      const rect = gallery.getBoundingClientRect();
+      const galleryVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
       if (!galleryVisible) return;
 
-      if (event.key === "ArrowLeft") {
-
-        changeGalleryImage(-1);
-
-      }
-
-      if (event.key === "ArrowRight") {
-
-        changeGalleryImage(1);
-
-      }
+      if (event.key === "ArrowLeft") changeGalleryImage(-1);
+      if (event.key === "ArrowRight") changeGalleryImage(1);
     });
-
-    /*
-     * Inicializa a galeria.
-     */
 
     createGallery();
 
-    /*
-     * TROCA AUTOMÁTICA
-     */
-
     if (galleryImages.length > 1) {
-
-      window.setInterval(() => {
-
-        /*
-         * A própria função verifica
-         * se o mouse está sobre a imagem.
-         */
-
-        changeGalleryImage(1);
-
-      }, galleryAutoPlayTime);
+      window.setInterval(() => changeGalleryImage(1), galleryAutoPlayTime);
     }
   }
 
@@ -565,7 +355,7 @@
           "FEITA PARA QUEM VIVE A MENSAGEM"
         ],
         image: "imagem/2CAMISAS.png",
-        alt: "Camiseta Porque Ele É Digno"
+        alt: "Camisetas Ekballo Sounds"
       },
       {
         tag: "T-SHIRT",
@@ -607,6 +397,14 @@
     const controls = document.querySelector("[data-product-controls]");
     const bgVideos = Array.from(document.querySelectorAll("[data-bg-video]"));
 
+    /*
+     * LINK DA LOJA
+     *
+     * Os botões COMPRAR AGORA abrem loja.html.
+     * Se o arquivo estiver em outra pasta, ajuste este caminho.
+     */
+    const storeUrl = "loja.html";
+
     const setActiveBgVideo = (index) => {
       bgVideos.forEach((video) => {
         const isActive = Number(video.dataset.bgVideo) === index;
@@ -623,25 +421,46 @@
 
     const renderContent = (index) => {
       const product = products[index];
+
       if (stageImage) {
         stageImage.src = product.image;
         stageImage.alt = product.alt;
       }
+
       if (stageTag) stageTag.textContent = product.tag;
       if (stageTitleTop) stageTitleTop.textContent = product.titleTop;
       if (stageTitleBottom) stageTitleBottom.textContent = product.titleBottom;
+
       if (stageLines) {
-        stageLines.innerHTML = product.lines.map((line) => `<p>${line}</p>`).join("");
+        stageLines.replaceChildren();
+
+        product.lines.forEach((line) => {
+          const paragraph = document.createElement("p");
+          paragraph.textContent = line;
+          stageLines.appendChild(paragraph);
+        });
       }
     };
 
+    /*
+     * BOTÕES DE NAVEGAÇÃO + COMPRAR AGORA
+     */
     const renderButtons = (index) => {
       if (!controls) return;
-      controls.replaceChildren(); // Forma otimizada de limpar elementos filhos
+
+      controls.replaceChildren();
 
       const fragment = document.createDocumentFragment();
-      const buttonNames = ["NOSSAS CAMISAS", "PORQUE ELE É DIGNO", "EKBALLO"];
+      const buttonNames = [
+        "NOSSAS CAMISAS",
+        "PORQUE ELE É DIGNO",
+        "EKBALLO"
+      ];
 
+      /*
+       * Mantém os botões de navegação já existentes.
+       * O botão correspondente ao produto atual não aparece.
+       */
       products.forEach((product, i) => {
         if (i === index) return;
 
@@ -657,13 +476,35 @@
         fragment.appendChild(button);
       });
 
+      /*
+       * O botão de compra aparece somente nas camisetas
+       * individuais: PORQUE ELE É DIGNO e EKBALLO.
+       */
+      if (index === 1 || index === 2) {
+        const buyRow = document.createElement("div");
+        buyRow.className = "product-buy-row";
+
+        const buyButton = document.createElement("a");
+        buyButton.className = "product-buy-btn";
+        buyButton.href = storeUrl;
+        buyButton.textContent = "COMPRAR AGORA";
+        buyButton.setAttribute("data-hover", "");
+        buyButton.dataset.color = String(index + 1);
+        buyButton.setAttribute("aria-label", `Comprar a camiseta ${products[index].titleTop}`);
+
+        buyRow.appendChild(buyButton);
+        fragment.appendChild(buyRow);
+      }
+
       controls.appendChild(fragment);
     };
 
     const switchProduct = (index) => {
       if (isAnimating || index === currentIndex) return;
+      if (!products[index]) return;
 
       isAnimating = true;
+
       if (transitionTimer) clearTimeout(transitionTimer);
 
       productStage.classList.remove("is-entering");
@@ -694,26 +535,51 @@
   }
 
   /* GSAP */
-  const hasGsap = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+  const hasGsap =
+    typeof window.gsap !== "undefined" &&
+    typeof window.ScrollTrigger !== "undefined";
 
   if (hasGsap && !prefersReducedMotion) {
     gsap.registerPlugin(ScrollTrigger);
 
     /* HERO */
     gsap.timeline({ defaults: { ease: "power3.out" } })
-      .to(".hero-title .reveal", { y: "0%", duration: 1, stagger: 0.12, delay: 0.2 })
-      .from(".hero-scatter .scatter-item", { opacity: 0, y: 10, duration: 0.6, stagger: 0.08 }, "-=0.5")
-      .from(".hero-sub", { opacity: 0, y: 16, duration: 0.7 }, "-=0.4")
-      .from(".hero-index", { opacity: 0, duration: 0.6 }, "-=0.6");
+      .to(".hero-title .reveal", {
+        y: "0%",
+        duration: 1,
+        stagger: 0.12,
+        delay: 0.2
+      })
+      .from(".hero-scatter .scatter-item", {
+        opacity: 0,
+        y: 10,
+        duration: 0.6,
+        stagger: 0.08
+      }, "-=0.5")
+      .from(".hero-sub", {
+        opacity: 0,
+        y: 16,
+        duration: 0.7
+      }, "-=0.4")
+      .from(".hero-index", {
+        opacity: 0,
+        duration: 0.6
+      }, "-=0.6");
 
     /* SEÇÕES */
-    gsap.utils.toArray(".section-eyebrow, .section-title, .about-title, .contact-title").forEach((element) => {
+    gsap.utils.toArray(
+      ".section-eyebrow, .section-title, .about-title, .contact-title"
+    ).forEach((element) => {
       gsap.from(element, {
         opacity: 0,
         y: 30,
         duration: 0.9,
         ease: "power3.out",
-        scrollTrigger: { trigger: element, start: "top 85%", once: true }
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+          once: true
+        }
       });
     });
 
@@ -724,7 +590,11 @@
         y: 50,
         duration: 0.9,
         ease: "power3.out",
-        scrollTrigger: { trigger: project, start: "top 88%", once: true }
+        scrollTrigger: {
+          trigger: project,
+          start: "top 88%",
+          once: true
+        }
       });
     });
 
@@ -734,7 +604,11 @@
       y: 40,
       duration: 0.9,
       ease: "power3.out",
-      scrollTrigger: { trigger: ".store-grid", start: "top 85%", once: true }
+      scrollTrigger: {
+        trigger: ".store-grid",
+        start: "top 85%",
+        once: true
+      }
     });
 
     gsap.from(".store-info > *", {
@@ -743,7 +617,11 @@
       duration: 0.8,
       stagger: 0.1,
       ease: "power3.out",
-      scrollTrigger: { trigger: ".store-grid", start: "top 85%", once: true }
+      scrollTrigger: {
+        trigger: ".store-grid",
+        start: "top 85%",
+        once: true
+      }
     });
 
     /* PRODUTOS */
@@ -752,16 +630,24 @@
       y: 40,
       duration: 0.9,
       ease: "power3.out",
-      scrollTrigger: { trigger: ".products", start: "top 85%", once: true }
+      scrollTrigger: {
+        trigger: ".products",
+        start: "top 85%",
+        once: true
+      }
     });
 
-    gsap.from(".product-controls .product-btn", {
+    gsap.from(".product-controls .product-btn, .product-controls .product-buy-btn", {
       opacity: 0,
       y: 20,
       duration: 0.7,
       stagger: 0.1,
       ease: "power3.out",
-      scrollTrigger: { trigger: ".products", start: "top 80%", once: true }
+      scrollTrigger: {
+        trigger: ".products",
+        start: "top 80%",
+        once: true
+      }
     });
 
     /* SOBRE */
@@ -771,7 +657,11 @@
       duration: 0.8,
       stagger: 0.12,
       ease: "power3.out",
-      scrollTrigger: { trigger: ".about-body", start: "top 85%", once: true }
+      scrollTrigger: {
+        trigger: ".about-body",
+        start: "top 85%",
+        once: true
+      }
     });
 
     /* ESTATÍSTICAS */
@@ -781,7 +671,11 @@
       duration: 0.7,
       stagger: 0.12,
       ease: "power3.out",
-      scrollTrigger: { trigger: ".stats-grid", start: "top 85%", once: true }
+      scrollTrigger: {
+        trigger: ".stats-grid",
+        start: "top 85%",
+        once: true
+      }
     });
 
     /* CONTATO */
@@ -791,7 +685,11 @@
       duration: 0.7,
       stagger: 0.1,
       ease: "power3.out",
-      scrollTrigger: { trigger: ".contact-links", start: "top 88%", once: true }
+      scrollTrigger: {
+        trigger: ".contact-links",
+        start: "top 88%",
+        once: true
+      }
     });
 
     /* PARALLAX DE IMAGENS */
@@ -884,6 +782,7 @@
     buildMarquee();
 
     let resizeTimeout;
+
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(buildMarquee, 200);
@@ -932,6 +831,7 @@
       if (!target) return;
 
       event.preventDefault();
+
       target.scrollIntoView({
         behavior: prefersReducedMotion ? "auto" : "smooth",
         block: "start"
