@@ -2208,7 +2208,7 @@ body {
 
 @keyframes store-marquee-scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-16.6666667%); }
 }
 
 .store-marquee:hover .store-marquee-track {
