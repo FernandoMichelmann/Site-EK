@@ -1799,3 +1799,27 @@ img {
         object-position: 57% center;
     }
 }
+
+
+/* CORREÇÃO DEFINITIVA: A FOTO ULTRAPASSA O CONTAINER CENTRAL */
+.store-hero .hero-content > .hero-photo-wrap {
+    left: 50% !important;
+    right: auto !important;
+    width: 100vw !important;
+    max-width: none !important;
+    transform: translateX(-50%) !important;
+}
+
+.store-hero .hero-photo-wrap > .hero-photo {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+@media (max-width: 760px) {
+    .store-hero .hero-content > .hero-photo-wrap {
+        left: 50% !important;
+        right: auto !important;
+        width: 100vw !important;
+        transform: translateX(-50%) !important;
+    }
+}
