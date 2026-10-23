@@ -2100,3 +2100,70 @@ body {
         padding-bottom: 80px;
     }
 }
+
+
+/* AJUSTES FINAIS PARA CELULAR: NAVEGAÇÃO CENTRALIZADA E HERO SEM FAIXAS */
+@media (max-width: 760px) {
+    .site-header .header-nav {
+        width: 100%;
+        justify-content: center !important;
+        text-align: center;
+    }
+
+    .site-header .header-nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .store-hero {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: #0d0d0c;
+    }
+
+    .store-hero .hero-content > .hero-photo-wrap {
+        position: absolute !important;
+        top: 0 !important;
+        right: auto !important;
+        bottom: 0 !important;
+        left: 50% !important;
+        width: 100vw !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        transform: translateX(-50%) !important;
+        overflow: hidden !important;
+        background: transparent !important;
+    }
+
+    .store-hero .hero-photo-wrap > .hero-photo {
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        object-position: 58% center !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-header .header-nav {
+        justify-content: center !important;
+    }
+
+    .store-hero .hero-photo-wrap > .hero-photo {
+        object-position: 60% center !important;
+    }
+}
