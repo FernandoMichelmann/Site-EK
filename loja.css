@@ -1449,3 +1449,50 @@ img {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* RODAPÉ — MARCA DISCRETA E PROPORCIONAL */
+.site-footer .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+    text-decoration: none;
+}
+
+.site-footer .footer-logo {
+    display: block;
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px !important;
+    flex: 0 0 24px !important;
+    object-fit: contain;
+}
+
+.site-footer .footer-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.site-footer .footer-brand .brand-name {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    font-size: 0.8rem;
+    line-height: 1.1;
+}
+
+.site-footer .footer-brand .brand-mark {
+    font-size: 0.62em;
+}
+
+.site-footer .footer-brand .brand-subtitle {
+    font-size: 0.55rem;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+}
+
+.site-footer .footer-copy {
+    font-size: 0.65rem;
+    line-height: 1.7;
+}
