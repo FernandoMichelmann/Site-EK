@@ -148,45 +148,49 @@ img {
     gap: 28px;
 }
 
-/* LOGOTIPO — MESMO PADRÃO DO SITE PRINCIPAL */
+/* LOGOTIPO — PADRÃO DO SITE PRINCIPAL (FORÇADO PARA A LOJA) */
 
-.site-header .header-inner > a.logo {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    gap: 0.5rem;
-    width: auto;
-    max-width: 100%;
-    color: var(--ink);
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    white-space: nowrap;
+.site-header .header-inner > a.logo,
+.site-header .header-inner > a.logo:visited {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-shrink: 0 !important;
+    gap: 0.5rem !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #f4f2ec !important;
+    font-family: "Space Grotesk", sans-serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
 }
 
-.site-header .logo img {
-    display: block;
-    width: 54px;
-    height: 54px;
-    flex: 0 0 54px;
-    margin: 0;
-    object-fit: contain;
-    object-position: center;
-    transition: transform 0.4s ease;
+.site-header .header-inner > a.logo img {
+    display: block !important;
+    width: 54px !important;
+    height: 54px !important;
+    flex: 0 0 54px !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    object-position: center !important;
 }
 
-.site-header .logo:hover img {
-    transform: rotate(15deg);
-}
-
-.site-header .logo-mark {
-    color: var(--muted);
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+.site-header .header-inner > a.logo .logo-mark {
+    display: inline !important;
+    margin: 0 !important;
+    color: #a7a49c !important;
+    font-family: "Space Grotesk", sans-serif !important;
+    font-size: 0.7em !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1 !important;
 }
 
 /* MENU PRINCIPAL */
@@ -1426,6 +1430,12 @@ img {
    ACESSIBILIDADE
    ===================================================== */
 
+
+/* Ajuste do logotipo em telas pequenas */
+@media (max-width: 540px) {
+    .site-header .header-inner > a.logo { font-size: 1.05rem !important; gap: 0.35rem !important; }
+    .site-header .header-inner > a.logo img { width: 42px !important; height: 42px !important; flex-basis: 42px !important; }
+}
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
