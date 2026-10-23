@@ -1496,3 +1496,214 @@ img {
     font-size: 0.65rem;
     line-height: 1.7;
 }
+
+
+/* =====================================================
+   HERO CINEMATOGRÁFICO — FOTO EM TELA CHEIA
+   ===================================================== */
+.store-hero {
+    position: relative;
+    min-height: max(680px, calc(100svh - 92px));
+    display: flex;
+    align-items: stretch;
+    isolation: isolate;
+    border-bottom: 1px solid var(--border);
+    background: #0d0d0c;
+}
+
+.store-hero .hero-glow {
+    z-index: 1;
+    inset: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: linear-gradient(90deg,
+        rgba(13, 13, 12, 0.94) 0%,
+        rgba(13, 13, 12, 0.78) 36%,
+        rgba(13, 13, 12, 0.30) 70%,
+        rgba(13, 13, 12, 0.18) 100%);
+}
+
+.store-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, calc(100% - 64px));
+    min-height: inherit;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-block: clamp(72px, 10vh, 120px);
+    gap: 0;
+}
+
+.store-hero .hero-photo-wrap {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    border: 0;
+    background: #111110;
+}
+
+.store-hero .hero-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center 42%;
+    transition: transform 900ms ease;
+}
+
+.store-hero .hero-photo-wrap::after {
+    background:
+        linear-gradient(0deg, rgba(13, 13, 12, 0.72) 0%, transparent 28%),
+        linear-gradient(90deg,
+            rgba(13, 13, 12, 0.88) 0%,
+            rgba(13, 13, 12, 0.72) 32%,
+            rgba(13, 13, 12, 0.30) 66%,
+            rgba(13, 13, 12, 0.12) 100%);
+}
+
+.store-hero .hero-kicker {
+    margin-bottom: 28px;
+    font-size: clamp(12px, 1vw, 15px);
+    letter-spacing: 0.22em;
+}
+
+.store-hero .hero-title {
+    max-width: 850px;
+    margin: 0 0 26px;
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-size: clamp(4.2rem, 9vw, 8.8rem);
+    font-weight: 700;
+    line-height: 0.88;
+    letter-spacing: -0.075em;
+    text-shadow: 0 4px 35px rgba(0, 0, 0, 0.18);
+}
+
+.store-hero .hero-title > span {
+    margin-top: 0.12em;
+    color: #fff;
+    -webkit-text-stroke: 0;
+}
+
+.store-hero .hero-description {
+    max-width: 460px;
+    color: rgba(243, 240, 232, 0.82);
+    font-size: clamp(14px, 1.2vw, 17px);
+    line-height: 1.8;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.store-hero .hero-index {
+    margin-top: 34px;
+    color: rgba(243, 240, 232, 0.72);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+}
+
+.store-hero .hero-photo-caption {
+    right: 32px;
+    bottom: 28px;
+    left: auto;
+    max-width: 280px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 10px;
+    text-align: right;
+}
+
+@media (max-width: 760px) {
+    .store-hero {
+        min-height: max(650px, calc(100svh - 120px));
+    }
+
+    .store-hero .hero-content {
+        width: calc(100% - 36px);
+        min-height: inherit;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-block: 72px 90px;
+    }
+
+    .store-hero .hero-kicker {
+        max-width: 100%;
+        margin-bottom: 24px;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+    }
+
+    .store-hero .hero-title {
+        max-width: 100%;
+        margin-bottom: 22px;
+        font-size: clamp(3.3rem, 12.5vw, 6rem);
+        line-height: 0.92;
+        letter-spacing: -0.065em;
+    }
+
+    .store-hero .hero-description {
+        max-width: 390px;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .store-hero .hero-index {
+        margin-top: 28px;
+        margin-bottom: 0;
+    }
+
+    .store-hero .hero-photo-wrap {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        aspect-ratio: auto;
+    }
+
+    .store-hero .hero-photo {
+        height: 100%;
+        min-height: 0;
+        object-position: 58% center;
+    }
+
+    .store-hero .hero-photo-wrap::after {
+        background:
+            linear-gradient(0deg, rgba(13, 13, 12, 0.64) 0%, rgba(13, 13, 12, 0.18) 42%, rgba(13, 13, 12, 0.5) 100%),
+            linear-gradient(90deg, rgba(13, 13, 12, 0.78) 0%, rgba(13, 13, 12, 0.45) 70%, rgba(13, 13, 12, 0.2) 100%);
+    }
+
+    .store-hero .hero-photo-caption {
+        right: 16px;
+        bottom: 18px;
+        left: 16px;
+        max-width: none;
+        font-size: 9px;
+        text-align: right;
+    }
+}
+
+@media (max-width: 420px) {
+    .store-hero {
+        min-height: max(620px, calc(100svh - 115px));
+    }
+
+    .store-hero .hero-content {
+        width: calc(100% - 32px);
+        padding-block: 60px 80px;
+    }
+
+    .store-hero .hero-title {
+        font-size: clamp(3rem, 12.2vw, 4rem);
+    }
+
+    .store-hero .hero-kicker {
+        font-size: 10px;
+    }
+}
