@@ -4,13 +4,6 @@
    ===================================================== */
 
 /* FONTES */
-/* Tipografia da marca compartilhada com o site principal */
-@font-face {
-    font-family: "monument";
-    src: url("FONTES/MONUMENT.OTF") format("opentype");
-    font-display: swap;
-}
-
 @font-face {
     font-family: "fashion";
     src: url("fontes/fashion.ttf") format("truetype");
@@ -206,9 +199,9 @@ img {
 }
 
 .brand-primary {
-    font-family: "monument", "Archivo Black", "Arial Black", sans-serif;
-    font-weight: normal;
-    letter-spacing: 0.015em;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .brand-mark {
