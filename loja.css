@@ -2220,3 +2220,22 @@ body {
         animation: none;
     }
 }
+
+
+/* LEGENDA DA FOTO: MANTER A FRASE INTEIRA EM UMA LINHA */
+.store-hero .hero-photo-caption {
+    white-space: nowrap;
+    font-size: clamp(8px, 0.72vw, 11px);
+    letter-spacing: clamp(0.5px, 0.12vw, 2px);
+}
+
+@media (max-width: 760px) {
+    .store-hero .hero-photo-caption {
+        right: 10px;
+        bottom: 12px;
+        left: 10px;
+        font-size: clamp(7px, 2vw, 10px);
+        letter-spacing: 0.35px;
+        white-space: nowrap;
+    }
+}
