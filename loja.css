@@ -2239,3 +2239,12 @@ body {
         white-space: nowrap;
     }
 }
+
+
+/* DESTAQUE VISTA — MESMA FONTE DO TÍTULO E VERDE DA IDENTIDADE */
+.store-hero .hero-title > span.hero-title-accent {
+    color: var(--green);
+    -webkit-text-stroke: 0;
+    font-family: inherit;
+    font-weight: inherit;
+}
