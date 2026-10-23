@@ -4,6 +4,13 @@
    ===================================================== */
 
 /* FONTES */
+/* Tipografia da marca compartilhada com o site principal */
+@font-face {
+    font-family: "monument";
+    src: url("FONTES/MONUMENT.OTF") format("opentype");
+    font-display: swap;
+}
+
 @font-face {
     font-family: "fashion";
     src: url("fontes/fashion.ttf") format("truetype");
@@ -184,25 +191,43 @@ img {
     line-height: 1.1;
 }
 
-.site-header .brand .brand-name {
-    display: block;
+.brand-name {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
     margin: 0;
     color: #fff;
-    font-family: var(--font);
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 1.3px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
     white-space: nowrap;
 }
 
-.site-header .brand .brand-subtitle {
+.brand-primary {
+    font-family: "monument", "Archivo Black", "Arial Black", sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.015em;
+}
+
+.brand-mark {
+    color: var(--muted);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.brand-subtitle {
     display: block;
-    margin: 0;
+    margin: 4px 0 0;
     color: var(--green);
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
     white-space: nowrap;
     text-transform: uppercase;
 }
@@ -1279,12 +1304,14 @@ img {
 
     .site-header .brand .brand-name {
         font-size: 12px;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.01em;
+        gap: 0.2rem;
     }
 
     .site-header .brand .brand-subtitle {
-        font-size: 12px;
-        letter-spacing: 1.2px;
+        margin-top: 4px;
+        font-size: 9px;
+        letter-spacing: 0.09em;
     }
 
     .header-nav {
