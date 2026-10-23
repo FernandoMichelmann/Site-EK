@@ -164,7 +164,7 @@ img {
     padding: 0 !important;
     color: #f4f2ec !important;
     font-family: "Space Grotesk", sans-serif !important;
-    font-size: 1.8rem !important;
+    font-size: 1.2rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.02em !important;
     line-height: 1 !important;
@@ -174,9 +174,9 @@ img {
 
 .site-header .header-inner > a.logo img {
     display: block !important;
-    width: 54px !important;
-    height: 54px !important;
-    flex: 0 0 54px !important;
+    width: 28px !important;
+    height: 28px !important;
+    flex: 0 0 28px !important;
     margin: 0 !important;
     object-fit: contain !important;
     object-position: center !important;
@@ -1433,8 +1433,8 @@ img {
 
 /* Ajuste do logotipo em telas pequenas */
 @media (max-width: 540px) {
-    .site-header .header-inner > a.logo { font-size: 1.05rem !important; gap: 0.35rem !important; }
-    .site-header .header-inner > a.logo img { width: 42px !important; height: 42px !important; flex-basis: 42px !important; }
+    .site-header .header-inner > a.logo { font-size: 1.2rem !important; gap: 0.5rem !important; }
+    .site-header .header-inner > a.logo img { width: 28px !important; height: 28px !important; flex-basis: 28px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
     html {
