@@ -2167,3 +2167,56 @@ body {
         object-position: 60% center !important;
     }
 }
+
+
+/* FAIXA ANIMADA — IGUAL À MARQUEE DO SITE PRINCIPAL */
+.store-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 0;
+    background: #050505;
+}
+
+.store-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: store-marquee-scroll 20s linear infinite;
+    will-change: transform;
+}
+
+.store-marquee-content {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1rem;
+    padding-right: 1rem;
+    color: #a7a49c;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.store-marquee-dot {
+    color: var(--green);
+}
+
+@keyframes store-marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.store-marquee:hover .store-marquee-track {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .store-marquee-track {
+        animation: none;
+    }
+}
